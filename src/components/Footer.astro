@@ -1,0 +1,87 @@
+---
+const footerLinks = {
+  produto: [
+    { label: 'Recursos', href: '#features' },
+    { label: 'Preços', href: '#pricing' },
+    { label: 'Blog', href: '/blog' },
+  ],
+  empresa: [
+    { label: 'Sobre', href: '/sobre' },
+    { label: 'Contato', href: '/contato' },
+  ],
+  legal: [
+    { label: 'Termos de uso', href: '/termos' },
+    { label: 'Privacidade', href: '/privacidade' },
+  ],
+};
+---
+
+<footer class="bg-slate-900 py-16">
+  <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+    <div class="grid gap-8 lg:grid-cols-4">
+      <!-- Brand -->
+      <div class="lg:col-span-1">
+        <a href="/" class="flex items-center gap-2">
+          <div class="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-emerald-500 to-teal-500">
+            <svg class="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+            </svg>
+          </div>
+          <span class="text-xl font-bold text-white">Zimplou</span>
+        </a>
+        <p class="mt-4 text-sm text-slate-400">
+          Agendamento inteligente com IA para pequenos negócios.
+        </p>
+      </div>
+
+      <!-- Links -->
+      <div class="lg:col-span-3">
+        <div class="grid grid-cols-3 gap-8">
+          <div>
+            <h4 class="font-semibold text-white">Produto</h4>
+            <ul class="mt-4 space-y-2">
+              {footerLinks.produto.map((link) => (
+                <li>
+                  <a href={link.href} class="text-sm text-slate-400 transition hover:text-white">
+                    {link.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div>
+            <h4 class="font-semibold text-white">Empresa</h4>
+            <ul class="mt-4 space-y-2">
+              {footerLinks.empresa.map((link) => (
+                <li>
+                  <a href={link.href} class="text-sm text-slate-400 transition hover:text-white">
+                    {link.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div>
+            <h4 class="font-semibold text-white">Legal</h4>
+            <ul class="mt-4 space-y-2">
+              {footerLinks.legal.map((link) => (
+                <li>
+                  <a href={link.href} class="text-sm text-slate-400 transition hover:text-white">
+                    {link.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom bar -->
+    <div class="mt-12 border-t border-slate-800 pt-8">
+      <p class="text-center text-sm text-slate-400">
+        © {new Date().getFullYear()} Zimplou. Todos os direitos reservados.
+      </p>
+    </div>
+  </div>
+</footer>

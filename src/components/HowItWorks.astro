@@ -1,0 +1,60 @@
+---
+const steps = [
+  {
+    number: '1',
+    title: 'Configure seu negócio',
+    description: 'Cadastre seus serviços, horários e equipe em minutos. Conecte seu WhatsApp e Google Calendar.',
+  },
+  {
+    number: '2',
+    title: 'Cliente envia mensagem',
+    description: 'Seu cliente manda um "oi" no WhatsApp. A IA responde instantaneamente e oferece os serviços.',
+  },
+  {
+    number: '3',
+    title: 'IA agenda automaticamente',
+    description: 'A IA verifica disponibilidade, sugere horários e confirma o agendamento. Tudo na conversa.',
+  },
+  {
+    number: '4',
+    title: 'Lembretes são enviados',
+    description: 'O cliente recebe confirmação e lembretes automáticos. Você só aparece na hora marcada.',
+  },
+];
+---
+
+<section id="how-it-works" class="py-20 sm:py-32">
+  <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+    <!-- Section header -->
+    <div class="text-center">
+      <h2 class="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
+        Como funciona
+      </h2>
+      <p class="mt-4 text-lg text-slate-600">
+        Em 4 passos simples você automatiza seu atendimento
+      </p>
+    </div>
+
+    <!-- Steps -->
+    <div class="mt-16 grid gap-8 lg:grid-cols-4">
+      {steps.map((step, index) => (
+        <div class="relative">
+          {/* Connector line */}
+          {index < steps.length - 1 && (
+            <div class="absolute left-8 top-8 hidden h-0.5 w-full bg-gradient-to-r from-emerald-500 to-transparent lg:block"></div>
+          )}
+          
+          <div class="relative flex flex-col items-center text-center lg:items-start lg:text-left">
+            {/* Number badge */}
+            <div class="flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-br from-emerald-500 to-teal-500 text-2xl font-bold text-white shadow-lg shadow-emerald-500/25">
+              {step.number}
+            </div>
+            
+            <h3 class="mt-6 text-xl font-semibold text-slate-900">{step.title}</h3>
+            <p class="mt-2 text-slate-600">{step.description}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

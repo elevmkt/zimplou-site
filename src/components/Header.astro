@@ -1,0 +1,55 @@
+---
+const navItems = [
+  { label: 'Recursos', href: '#features' },
+  { label: 'Como funciona', href: '#how-it-works' },
+  { label: 'Preços', href: '#pricing' },
+  { label: 'Blog', href: '/blog' },
+];
+---
+
+<header class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-lg border-b border-slate-100">
+  <nav class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+    <div class="flex h-16 items-center justify-between">
+      <!-- Logo -->
+      <a href="/" class="flex items-center gap-2">
+        <div class="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-emerald-500 to-teal-500">
+          <svg class="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+          </svg>
+        </div>
+        <span class="text-xl font-bold text-slate-900">Zimplou</span>
+      </a>
+
+      <!-- Desktop Nav -->
+      <div class="hidden md:flex md:items-center md:gap-8">
+        {navItems.map((item) => (
+          <a 
+            href={item.href} 
+            class="text-sm font-medium text-slate-600 transition hover:text-emerald-600"
+          >
+            {item.label}
+          </a>
+        ))}
+      </div>
+
+      <!-- CTA Buttons -->
+      <div class="flex items-center gap-3">
+        <a 
+          href="https://app.zimplou.com" 
+          class="hidden sm:inline-flex text-sm font-medium text-slate-600 transition hover:text-emerald-600"
+        >
+          Entrar
+        </a>
+        <a 
+          href="https://app.zimplou.com" 
+          class="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-emerald-500 to-teal-500 px-4 py-2 text-sm font-semibold text-white shadow-lg shadow-emerald-500/25 transition hover:shadow-emerald-500/40 hover:scale-105"
+        >
+          Começar grátis
+        </a>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<!-- Spacer for fixed header -->
+<div class="h-16"></div>

@@ -1,0 +1,60 @@
+---
+const features = [
+  {
+    icon: '💬',
+    title: 'WhatsApp Integrado',
+    description: 'Seus clientes agendam direto pelo WhatsApp, sem precisar de app ou login.',
+  },
+  {
+    icon: '🤖',
+    title: 'IA Conversacional',
+    description: 'Atendimento natural 24/7. A IA entende contexto, responde dúvidas e agenda.',
+  },
+  {
+    icon: '📅',
+    title: 'Google Calendar',
+    description: 'Sincroniza automaticamente com sua agenda. Sem conflitos, sem overbooking.',
+  },
+  {
+    icon: '🔔',
+    title: 'Lembretes Automáticos',
+    description: 'Confirmações e lembretes que reduzem faltas em até 70%.',
+  },
+  {
+    icon: '👥',
+    title: 'Múltiplos Profissionais',
+    description: 'Gerencie toda a equipe em um só lugar. Cada um com sua agenda.',
+  },
+  {
+    icon: '📊',
+    title: 'Relatórios',
+    description: 'Acompanhe agendamentos, taxa de comparecimento e receita prevista.',
+  },
+];
+---
+
+<section id="features" class="py-20 sm:py-32 bg-slate-50">
+  <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+    <!-- Section header -->
+    <div class="text-center">
+      <h2 class="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
+        Tudo que você precisa para
+        <span class="text-emerald-600">automatizar</span>
+      </h2>
+      <p class="mt-4 text-lg text-slate-600">
+        Funcionalidades pensadas para simplificar seu dia a dia
+      </p>
+    </div>
+
+    <!-- Features grid -->
+    <div class="mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+      {features.map((feature) => (
+        <div class="group rounded-2xl bg-white p-8 shadow-sm transition hover:shadow-lg hover:-translate-y-1">
+          <div class="mb-4 text-4xl">{feature.icon}</div>
+          <h3 class="text-xl font-semibold text-slate-900">{feature.title}</h3>
+          <p class="mt-2 text-slate-600">{feature.description}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
