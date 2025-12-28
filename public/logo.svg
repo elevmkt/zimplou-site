@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1024" height="1024" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Aurora blur for background ellipses -->
+    <filter id="aurora-blur" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="10"/>
+    </filter>
+    <!-- Glow effect for the Z -->
+    <filter id="z-glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Dark container background -->
+  <rect width="120" height="120" rx="28" fill="#0a0a0f"/>
+
+  <!-- Aurora background - Sky, Teal, Emerald -->
+  <ellipse cx="38" cy="45" rx="28" ry="26" fill="#0ea5e9" filter="url(#aurora-blur)" opacity="0.8"/>
+  <ellipse cx="80" cy="50" rx="26" ry="28" fill="#14b8a6" filter="url(#aurora-blur)" opacity="0.75"/>
+  <ellipse cx="55" cy="78" rx="30" ry="24" fill="#10b981" filter="url(#aurora-blur)" opacity="0.8"/>
+
+  <!-- Glowing curved Z with nodes -->
+  <g filter="url(#z-glow)">
+    <!-- Curved Z path -->
+    <path
+      d="M35 38 C50 32 70 32 85 38 C72 48 65 52 60 60 C55 68 48 72 35 82 C50 88 70 88 85 82"
+      stroke="white"
+      stroke-width="3.5"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      fill="none"
+    />
+    <!-- Corner nodes -->
+    <circle cx="35" cy="38" r="6" fill="white"/>
+    <circle cx="85" cy="38" r="6" fill="white"/>
+    <circle cx="35" cy="82" r="6" fill="white"/>
+    <circle cx="85" cy="82" r="6" fill="white"/>
+    <!-- Center node -->
+    <circle cx="60" cy="60" r="9" fill="white"/>
+  </g>
+</svg>

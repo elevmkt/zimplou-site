@@ -10,23 +10,19 @@ const footerLinks = {
     { label: 'Contato', href: '/contato' },
   ],
   legal: [
-    { label: 'Termos de uso', href: '/termos' },
-    { label: 'Privacidade', href: '/privacidade' },
+    { label: 'Termos de uso', href: 'https://app.zimplou.com/pt-BR/legal' },
+    { label: 'Privacidade', href: 'https://app.zimplou.com/pt-BR/legal#privacy' },
   ],
 };
 ---
 
-<footer class="bg-slate-900 py-16">
+<footer class="relative py-16 border-t border-white/5">
   <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
     <div class="grid gap-8 lg:grid-cols-4">
       <!-- Brand -->
       <div class="lg:col-span-1">
-        <a href="/" class="flex items-center gap-2">
-          <div class="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-emerald-500 to-teal-500">
-            <svg class="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-            </svg>
-          </div>
+        <a href="/" class="flex items-center gap-3">
+          <img src="/logo.svg" alt="Zimplou" class="h-10 w-10 rounded-xl" />
           <span class="text-xl font-bold text-white">Zimplou</span>
         </a>
         <p class="mt-4 text-sm text-slate-400">
@@ -42,7 +38,7 @@ const footerLinks = {
             <ul class="mt-4 space-y-2">
               {footerLinks.produto.map((link) => (
                 <li>
-                  <a href={link.href} class="text-sm text-slate-400 transition hover:text-white">
+                  <a href={link.href} class="text-sm text-slate-400 transition hover:text-emerald-400">
                     {link.label}
                   </a>
                 </li>
@@ -54,7 +50,7 @@ const footerLinks = {
             <ul class="mt-4 space-y-2">
               {footerLinks.empresa.map((link) => (
                 <li>
-                  <a href={link.href} class="text-sm text-slate-400 transition hover:text-white">
+                  <a href={link.href} class="text-sm text-slate-400 transition hover:text-emerald-400">
                     {link.label}
                   </a>
                 </li>
@@ -66,7 +62,12 @@ const footerLinks = {
             <ul class="mt-4 space-y-2">
               {footerLinks.legal.map((link) => (
                 <li>
-                  <a href={link.href} class="text-sm text-slate-400 transition hover:text-white">
+                  <a
+                    href={link.href}
+                    class="text-sm text-slate-400 transition hover:text-emerald-400"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     {link.label}
                   </a>
                 </li>
@@ -78,9 +79,9 @@ const footerLinks = {
     </div>
 
     <!-- Bottom bar -->
-    <div class="mt-12 border-t border-slate-800 pt-8">
-      <p class="text-center text-sm text-slate-400">
-        © {new Date().getFullYear()} Zimplou. Todos os direitos reservados.
+    <div class="mt-12 border-t border-white/5 pt-8">
+      <p class="text-center text-sm text-slate-500">
+        {new Date().getFullYear()} Zimplou. Todos os direitos reservados.
       </p>
     </div>
   </div>

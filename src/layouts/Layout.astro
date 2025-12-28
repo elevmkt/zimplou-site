@@ -6,7 +6,7 @@ interface Props {
   description?: string;
 }
 
-const { 
+const {
   title = "Zimplou - Agendamento inteligente com IA para seu negócio",
   description = "Automatize seu atendimento no WhatsApp com IA. Agendamentos, confirmações e lembretes automáticos. Ideal para clínicas, salões, estúdios e escolas."
 } = Astro.props;
@@ -17,23 +17,37 @@ const {
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href="/logo.svg" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
     <meta name="description" content={description} />
-    
+
     <!-- Open Graph -->
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://zimplou.com" />
-    
+
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
   </head>
-  <body class="min-h-screen bg-white text-slate-900 antialiased">
-    <slot />
+  <body class="min-h-screen bg-[#0a0a0f] text-white antialiased">
+    <!-- Aurora background -->
+    <div class="aurora-bg">
+      <div class="aurora-blob aurora-blob-1"></div>
+      <div class="aurora-blob aurora-blob-2"></div>
+      <div class="aurora-blob aurora-blob-3"></div>
+      <div class="aurora-blob aurora-blob-4"></div>
+    </div>
+
+    <!-- Noise overlay -->
+    <div class="noise-overlay"></div>
+
+    <!-- Content -->
+    <div class="relative z-10">
+      <slot />
+    </div>
   </body>
 </html>
