@@ -48,58 +48,119 @@ body {
   position: absolute;
   border-radius: 50%;
   filter: blur(80px);
-  opacity: 0.5;
-  animation: aurora-float 20s ease-in-out infinite;
+  mix-blend-mode: screen;
 }
 
+/* Sky blue blob - top left */
 .aurora-blob-1 {
   width: 600px;
   height: 600px;
   background: radial-gradient(circle, #0ea5e9 0%, transparent 70%);
   top: -200px;
   left: -100px;
-  animation-delay: 0s;
+  opacity: 0.4;
+  animation: aurora-float-1 12s ease-in-out infinite;
 }
 
+/* Emerald blob - center right */
 .aurora-blob-2 {
   width: 500px;
   height: 500px;
-  background: radial-gradient(circle, #14b8a6 0%, transparent 70%);
+  background: radial-gradient(circle, #10b981 0%, transparent 70%);
   top: 20%;
   right: -100px;
-  animation-delay: -5s;
+  opacity: 0.35;
+  animation: aurora-float-2 10s ease-in-out infinite;
 }
 
+/* Teal blob - bottom center */
 .aurora-blob-3 {
   width: 700px;
   height: 700px;
-  background: radial-gradient(circle, #10b981 0%, transparent 70%);
+  background: radial-gradient(circle, #14b8a6 0%, transparent 70%);
   bottom: -200px;
   left: 30%;
-  animation-delay: -10s;
+  opacity: 0.3;
+  animation: aurora-float-3 14s ease-in-out infinite;
 }
 
+/* Violet blob - center left (adds depth) */
 .aurora-blob-4 {
+  width: 450px;
+  height: 450px;
+  background: radial-gradient(circle, #8b5cf6 0%, transparent 70%);
+  top: 40%;
+  left: 5%;
+  opacity: 0.25;
+  animation: aurora-float-4 11s ease-in-out infinite;
+}
+
+/* Cyan blob - bottom right */
+.aurora-blob-5 {
   width: 400px;
   height: 400px;
   background: radial-gradient(circle, #06b6d4 0%, transparent 70%);
-  top: 50%;
-  left: 10%;
-  animation-delay: -15s;
+  bottom: 10%;
+  right: 5%;
+  opacity: 0.35;
+  animation: aurora-float-5 9s ease-in-out infinite;
 }
 
-@keyframes aurora-float {
+/* Unique keyframes for organic, non-repetitive motion */
+@keyframes aurora-float-1 {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(40px, 20px) scale(1.08);
+  }
+  66% {
+    transform: translate(-30px, -10px) scale(0.95);
+  }
+}
+
+@keyframes aurora-float-2 {
   0%, 100% {
     transform: translate(0, 0) scale(1);
   }
   25% {
-    transform: translate(30px, -30px) scale(1.05);
-  }
-  50% {
-    transform: translate(-20px, 20px) scale(0.95);
+    transform: translate(-35px, 25px) scale(1.05);
   }
   75% {
-    transform: translate(20px, 10px) scale(1.02);
+    transform: translate(25px, -35px) scale(0.92);
+  }
+}
+
+@keyframes aurora-float-3 {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  40% {
+    transform: translate(50px, -20px) scale(1.1);
+  }
+  80% {
+    transform: translate(-40px, 30px) scale(0.9);
+  }
+}
+
+@keyframes aurora-float-4 {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(30px, 40px) scale(1.15);
+  }
+}
+
+@keyframes aurora-float-5 {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  35% {
+    transform: translate(-45px, -25px) scale(1.06);
+  }
+  70% {
+    transform: translate(35px, 15px) scale(0.94);
   }
 }
 
