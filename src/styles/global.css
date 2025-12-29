@@ -34,143 +34,108 @@ body {
 }
 
 /* ============================================
-   AURORA BACKGROUND SYSTEM
-   Animated gradient blobs for depth and motion
+   AURORA BACKGROUND - Matching app design system
 ============================================ */
 .aurora-bg {
   position: fixed;
-  inset: 0;
+  inset: -50%;
+  width: 200%;
+  height: 200%;
   z-index: -1;
-  background: #050508;
+  pointer-events: none;
   overflow: hidden;
 }
 
 .aurora-blob {
   position: absolute;
   border-radius: 50%;
-  filter: blur(100px);
+  filter: blur(80px);
+  opacity: 0.35;
+  mix-blend-mode: normal;
   will-change: transform;
 }
 
-/* Sky blue blob - top left, large and prominent */
+/* Blob 1 - Sky blue, large, top-left origin */
 .aurora-blob-1 {
-  width: 800px;
-  height: 800px;
-  background: radial-gradient(circle, rgba(14, 165, 233, 0.6) 0%, rgba(14, 165, 233, 0) 70%);
-  top: -300px;
-  left: -200px;
-  animation: aurora-drift-1 15s ease-in-out infinite;
-}
-
-/* Emerald blob - center right */
-.aurora-blob-2 {
-  width: 700px;
-  height: 700px;
-  background: radial-gradient(circle, rgba(16, 185, 129, 0.5) 0%, rgba(16, 185, 129, 0) 70%);
+  width: 60%;
+  height: 60%;
   top: 10%;
-  right: -150px;
-  animation: aurora-drift-2 12s ease-in-out infinite;
+  left: -10%;
+  background: radial-gradient(circle, rgba(14, 165, 233, 0.8) 0%, rgba(14, 165, 233, 0) 70%);
+  animation: aurora-move-1 10s ease-in-out infinite;
 }
 
-/* Teal blob - bottom center, largest */
-.aurora-blob-3 {
-  width: 900px;
-  height: 900px;
-  background: radial-gradient(circle, rgba(20, 184, 166, 0.45) 0%, rgba(20, 184, 166, 0) 70%);
-  bottom: -300px;
-  left: 20%;
-  animation: aurora-drift-3 18s ease-in-out infinite;
-}
-
-/* Violet/purple blob - adds color depth */
-.aurora-blob-4 {
-  width: 600px;
-  height: 600px;
-  background: radial-gradient(circle, rgba(139, 92, 246, 0.35) 0%, rgba(139, 92, 246, 0) 70%);
-  top: 35%;
-  left: -100px;
-  animation: aurora-drift-4 14s ease-in-out infinite;
-}
-
-/* Cyan blob - bottom right accent */
-.aurora-blob-5 {
-  width: 550px;
-  height: 550px;
-  background: radial-gradient(circle, rgba(6, 182, 212, 0.4) 0%, rgba(6, 182, 212, 0) 70%);
+/* Blob 2 - Emerald, medium, bottom-right origin */
+.aurora-blob-2 {
+  width: 50%;
+  height: 50%;
   bottom: 5%;
-  right: -50px;
-  animation: aurora-drift-5 11s ease-in-out infinite;
+  right: -5%;
+  background: radial-gradient(circle, rgba(16, 185, 129, 0.7) 0%, rgba(16, 185, 129, 0) 70%);
+  animation: aurora-move-2 12s ease-in-out infinite;
 }
 
-/* Smooth, organic drifting animations */
-@keyframes aurora-drift-1 {
-  0%, 100% {
-    transform: translate(0, 0) scale(1);
-  }
-  25% {
-    transform: translate(80px, 40px) scale(1.1);
-  }
-  50% {
-    transform: translate(40px, 80px) scale(1.05);
-  }
-  75% {
-    transform: translate(-40px, 30px) scale(0.95);
-  }
+/* Blob 3 - Teal, medium, center */
+.aurora-blob-3 {
+  width: 45%;
+  height: 45%;
+  top: 30%;
+  left: 30%;
+  background: radial-gradient(circle, rgba(20, 184, 166, 0.6) 0%, rgba(20, 184, 166, 0) 70%);
+  animation: aurora-move-3 9s ease-in-out infinite;
 }
 
-@keyframes aurora-drift-2 {
-  0%, 100% {
-    transform: translate(0, 0) scale(1);
-  }
-  30% {
-    transform: translate(-60px, 50px) scale(1.08);
-  }
-  60% {
-    transform: translate(-100px, -30px) scale(0.92);
-  }
+/* Blob 4 - Violet accent, small */
+.aurora-blob-4 {
+  width: 35%;
+  height: 35%;
+  top: 5%;
+  right: 15%;
+  background: radial-gradient(circle, rgba(139, 92, 246, 0.5) 0%, rgba(139, 92, 246, 0) 70%);
+  animation: aurora-move-4 11s ease-in-out infinite;
 }
 
-@keyframes aurora-drift-3 {
-  0%, 100% {
-    transform: translate(0, 0) scale(1);
-  }
-  35% {
-    transform: translate(100px, -50px) scale(1.12);
-  }
-  70% {
-    transform: translate(-60px, 40px) scale(0.88);
-  }
+/* Blob 5 - Cyan accent, small, floating */
+.aurora-blob-5 {
+  width: 30%;
+  height: 30%;
+  bottom: 25%;
+  left: 10%;
+  background: radial-gradient(circle, rgba(6, 182, 212, 0.5) 0%, rgba(6, 182, 212, 0) 70%);
+  animation: aurora-move-5 14s ease-in-out infinite;
 }
 
-@keyframes aurora-drift-4 {
-  0%, 100% {
-    transform: translate(0, 0) scale(1);
-  }
-  40% {
-    transform: translate(70px, 60px) scale(1.15);
-  }
-  80% {
-    transform: translate(30px, -40px) scale(0.9);
-  }
+/* Aurora movement keyframes - percentage-based for fluid motion */
+@keyframes aurora-move-1 {
+  0%, 100% { transform: translate(0%, 0%) scale(1); }
+  25% { transform: translate(15%, 10%) scale(1.1); }
+  50% { transform: translate(25%, -5%) scale(0.95); }
+  75% { transform: translate(10%, 15%) scale(1.05); }
 }
 
-@keyframes aurora-drift-5 {
-  0%, 100% {
-    transform: translate(0, 0) scale(1);
-  }
-  50% {
-    transform: translate(-80px, -60px) scale(1.1);
-  }
+@keyframes aurora-move-2 {
+  0%, 100% { transform: translate(0%, 0%) scale(1) rotate(0deg); }
+  33% { transform: translate(-20%, -15%) scale(1.15) rotate(10deg); }
+  66% { transform: translate(-10%, 10%) scale(0.9) rotate(-5deg); }
 }
 
-/* Noise texture overlay */
-.noise-overlay {
-  position: fixed;
-  inset: 0;
-  z-index: -1;
-  opacity: 0.03;
-  pointer-events: none;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+@keyframes aurora-move-3 {
+  0%, 100% { transform: translate(0%, 0%) scale(1); }
+  20% { transform: translate(-10%, 15%) scale(1.1); }
+  40% { transform: translate(15%, 10%) scale(0.95); }
+  60% { transform: translate(20%, -10%) scale(1.05); }
+  80% { transform: translate(-5%, -15%) scale(1); }
+}
+
+@keyframes aurora-move-4 {
+  0%, 100% { transform: translate(0%, 0%) scale(1) rotate(0deg); }
+  50% { transform: translate(-25%, 20%) scale(1.2) rotate(-15deg); }
+}
+
+@keyframes aurora-move-5 {
+  0%, 100% { transform: translate(0%, 0%) scale(1); }
+  33% { transform: translate(30%, -20%) scale(1.1); }
+  66% { transform: translate(15%, 25%) scale(0.9); }
 }
 
 /* ============================================
