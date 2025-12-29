@@ -151,12 +151,7 @@ const industries = [
 
   .marquee-item {
     flex-shrink: 0;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-  }
-
-  .marquee-item:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 20px rgba(16, 185, 129, 0.3);
+    pointer-events: none;
   }
 
   @keyframes marquee {
@@ -166,10 +161,5 @@ const industries = [
     100% {
       transform: translateX(-50%);
     }
-  }
-
-  /* Pause on hover */
-  .marquee-track:hover {
-    animation-play-state: paused;
   }
 </style>
