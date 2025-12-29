@@ -5,21 +5,21 @@ const plans = [
     price: 'R$ 19,90',
     period: '/mês',
     yearlyPrice: 'R$ 149,90/ano',
-    yearlySavings: 'Economize 37%',
-    description: 'Atendente virtual por WhatsApp',
+    yearlySavings: '2 meses grátis',
+    description: 'Pra quem quer parar de responder "qual horário tem?"',
     features: [
-      'Atendente IA no WhatsApp 24/7',
-      'Responde dúvidas automaticamente',
-      'Recebe pagamentos via Stripe',
-      'Dashboard de métricas',
-      'Suporte por email',
+      'IA respondendo no WhatsApp 24h',
+      'Tira dúvidas dos clientes',
+      'Cobra pelo Stripe direto na conversa',
+      'Painel pra ver como tá indo',
+      'Suporte quando precisar',
     ],
     notIncluded: [
-      'Agendamento automático',
-      'Google Calendar sync',
-      'Lembretes e confirmações',
+      'Marca horário sozinha',
+      'Conecta no Google Calendar',
+      'Manda lembrete pro cliente',
     ],
-    cta: 'Começar teste grátis',
+    cta: 'Testar 10 dias grátis',
     popular: false,
   },
   {
@@ -27,19 +27,19 @@ const plans = [
     price: 'R$ 49,90',
     period: '/mês',
     yearlyPrice: 'R$ 389,90/ano',
-    yearlySavings: 'Economize 35%',
-    description: 'Automação completa do seu negócio',
+    yearlySavings: '2 meses grátis',
+    description: 'Pra quem quer esquecer que agendamento existe',
     features: [
-      'Tudo do plano Essencial',
-      'Agendamento automático por IA',
-      'Google Calendar integrado',
-      'Lembretes e confirmações',
+      'Tudo do Essencial, mais:',
+      'Agenda sozinha pelo WhatsApp',
+      'Sincroniza com Google Calendar',
+      'Manda lembrete e confirmação',
       'Remarketing automático',
-      'Relatórios avançados',
+      'Relatórios detalhados',
       'Suporte prioritário',
     ],
     notIncluded: [],
-    cta: 'Começar teste grátis',
+    cta: 'Testar 10 dias grátis',
     popular: true,
   },
 ];
@@ -50,10 +50,11 @@ const plans = [
     <!-- Section header -->
     <div class="text-center">
       <h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl">
-        Planos simples e transparentes
+        Quanto custa
+        <span class="gradient-text">ter mais tempo?</span>
       </h2>
       <p class="mt-4 text-lg text-slate-400">
-        10 dias grátis para testar. Cancele quando quiser.
+        Testa 10 dias grátis. Se não gostar, cancela sem burocracia.
       </p>
     </div>
 
@@ -118,9 +119,9 @@ const plans = [
     <!-- Lifetime option -->
     <div class="mt-12 text-center">
       <p class="text-slate-400">
-        Também oferecemos
-        <span class="text-emerald-400 font-semibold">licenças vitalícias</span>
-        a partir de R$ 224,85 - pague uma vez, use para sempre.
+        Prefere pagar uma vez só?
+        <span class="text-emerald-400 font-semibold">Licença vitalícia</span>
+        a partir de R$ 224,85 – seu pra sempre.
       </p>
     </div>
   </div>
