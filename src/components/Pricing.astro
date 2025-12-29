@@ -6,18 +6,19 @@ const plans = [
     period: '/mês',
     yearlyPrice: 'R$ 149,90/ano',
     yearlySavings: '2 meses grátis',
-    description: 'Pra quem quer parar de responder "qual horário tem?"',
+    description: 'Atende WhatsApp e cobra automaticamente',
+    highlight: 'Ideal pra começar',
     features: [
-      'IA respondendo no WhatsApp 24h',
-      'Tira dúvidas dos clientes',
-      'Cobra pelo Stripe direto na conversa',
-      'Painel pra ver como tá indo',
-      'Suporte quando precisar',
+      'IA respondendo no WhatsApp 24/7',
+      'Conversa natural, não menu robótico',
+      'Responde perguntas automaticamente',
+      'Cobra via Stripe direto na conversa',
+      'Painel pra acompanhar tudo',
     ],
     notIncluded: [
-      'Marca horário sozinha',
-      'Conecta no Google Calendar',
-      'Manda lembrete pro cliente',
+      'Agendamento automático',
+      'Sincronização com calendário',
+      'Lembretes automáticos',
     ],
     cta: 'Testar 10 dias grátis',
     popular: false,
@@ -28,14 +29,15 @@ const plans = [
     period: '/mês',
     yearlyPrice: 'R$ 389,90/ano',
     yearlySavings: '2 meses grátis',
-    description: 'Pra quem quer esquecer que agendamento existe',
+    description: 'Atende, agenda e gerencia tudo sozinho',
+    highlight: 'Automação total',
     features: [
       'Tudo do Essencial, mais:',
-      'Agenda sozinha pelo WhatsApp',
+      'Agenda automática pelo WhatsApp',
+      'Link mágico - cliente faz tudo sozinho',
       'Sincroniza com Google Calendar',
-      'Manda lembrete e confirmação',
-      'Remarketing automático',
-      'Relatórios detalhados',
+      'Lembretes e confirmações automáticas',
+      'Assinaturas e pacotes de créditos',
       'Suporte prioritário',
     ],
     notIncluded: [],
@@ -47,14 +49,14 @@ const plans = [
 
 <section id="pricing" class="py-20 sm:py-32 section-glass">
   <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-    <!-- Section header -->
+    <!-- Section header - Benefit focused -->
     <div class="text-center">
       <h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl">
-        Quanto custa
-        <span class="gradient-text">ter mais tempo?</span>
+        Simples e direto.
+        <span class="gradient-text">Escolhe o seu.</span>
       </h2>
       <p class="mt-4 text-lg text-slate-400">
-        Testa 10 dias grátis. Se não gostar, cancela sem burocracia.
+        Dois planos, sem surpresas. Testa 10 dias grátis e depois escolhe.
       </p>
     </div>
 
@@ -82,6 +84,9 @@ const plans = [
               {plan.yearlySavings}
             </span>
           </div>
+
+          <!-- Highlight - benefit tag -->
+          <p class="mt-3 text-xs text-emerald-400 font-medium">{plan.highlight}</p>
 
           <ul class="mt-8 space-y-3">
             {plan.features.map((feature) => (
@@ -116,12 +121,19 @@ const plans = [
       ))}
     </div>
 
+    <!-- No card required note -->
+    <div class="mt-8 text-center">
+      <p class="text-slate-500 text-sm">
+        Funciona em 10 minutos. Sem cartão.
+      </p>
+    </div>
+
     <!-- Lifetime option -->
-    <div class="mt-12 text-center">
+    <div class="mt-8 text-center">
       <p class="text-slate-400">
         Prefere pagar uma vez só?
         <span class="text-emerald-400 font-semibold">Licença vitalícia</span>
-        a partir de R$ 224,85 – seu pra sempre.
+        a partir de R$ 224,85.
       </p>
     </div>
   </div>
