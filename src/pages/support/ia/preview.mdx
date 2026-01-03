@@ -1,0 +1,287 @@
+---
+layout: ../../../layouts/DocsLayout.astro
+title: Testando a IA
+description: Teste sua IA antes de liberar para atendimento real.
+---
+
+A aba de testes é um ambiente onde você conversa com sua IA como se fosse um cliente. Use para verificar se as configurações estão corretas antes de liberar para atendimento real no WhatsApp.
+
+## Acessando
+
+1. No dashboard, toque em **IA**
+2. Toque na aba **Testar**
+
+## Como funciona
+
+O preview simula uma conversa de WhatsApp:
+- Você digita como cliente
+- A IA responde como faria no WhatsApp
+- Não afeta clientes reais
+- Não cria agendamentos reais (em modo teste)
+
+## Interface do preview
+
+```
+┌────────────────────────────────┐
+│        Preview da IA           │
+├────────────────────────────────┤
+│                                │
+│ Você: Olá, boa tarde!         │
+│                                │
+│           Olá! Boa tarde! 😊   │
+│           Como posso ajudar?   │
+│                                │
+│ Você: Quanto custa o corte?   │
+│                                │
+│           O corte feminino     │
+│           custa R$ 80,00 e     │
+│           inclui lavagem.      │
+│           Quer agendar?        │
+│                                │
+├────────────────────────────────┤
+│ [Digite sua mensagem...   ] 📤 │
+└────────────────────────────────┘
+```
+
+## O que testar
+
+### 1. Saudações
+
+Comece com cumprimentos simples:
+```
+"Olá"
+"Bom dia"
+"Oi, tudo bem?"
+```
+
+**Verifique:**
+- A IA responde com o tom configurado?
+- O nome do negócio está correto?
+
+### 2. Perguntas sobre serviços
+
+```
+"Quais serviços vocês oferecem?"
+"Vocês fazem coloração?"
+"Tem manicure?"
+```
+
+**Verifique:**
+- Os serviços listados estão corretos?
+- Não menciona serviços que você não oferece?
+
+### 3. Preços
+
+```
+"Quanto custa o corte?"
+"Qual o preço da escova?"
+"Me fala os valores"
+```
+
+**Verifique:**
+- Os preços estão corretos?
+- Condiz com o que você configurou em Ofertas?
+
+### 4. Disponibilidade
+
+```
+"Tem horário amanhã?"
+"Quero marcar para sábado"
+"Qual a próxima disponibilidade?"
+```
+
+**Verifique:**
+- Oferece horários dentro do seu expediente?
+- Respeita dias que você não trabalha?
+- A duração dos serviços está correta?
+
+### 5. Localização
+
+```
+"Onde vocês ficam?"
+"Qual o endereço?"
+"Como chego aí?"
+```
+
+**Verifique:**
+- O endereço está correto?
+- Informações adicionais (estacionamento, andar) aparecem?
+
+### 6. Agendamento completo
+
+Simule um agendamento do início ao fim:
+```
+1. "Olá!"
+2. "Quero marcar um corte"
+3. "Quanto custa?"
+4. "Tem horário sexta?"
+5. "Quero às 14h"
+6. "Meu nome é João"
+```
+
+**Verifique:**
+- O fluxo está natural?
+- A IA pede as informações necessárias?
+- A confirmação está clara?
+
+### 7. Situações especiais
+
+```
+"Preciso cancelar meu horário"
+"Quero falar com atendente"
+"Vocês aceitam cartão?"
+"Tem desconto?"
+```
+
+**Verifique:**
+- A IA sabe responder?
+- Transfere para humano quando deve?
+- Informações das instruções estão funcionando?
+
+## Checklist de teste
+
+Use este checklist antes de liberar a IA:
+
+- [ ] Saudação está adequada
+- [ ] Nome do negócio está correto
+- [ ] Serviços listados estão corretos
+- [ ] Preços estão corretos
+- [ ] Horários de funcionamento estão corretos
+- [ ] Endereço está correto
+- [ ] Tom de voz está adequado
+- [ ] Fluxo de agendamento funciona
+- [ ] Responde perguntas sobre pagamento
+- [ ] Sabe quando transferir para humano
+
+## Reiniciando a conversa
+
+Para começar uma nova conversa de teste:
+1. Toque em **Nova conversa** ou ícone de lixeira
+2. A conversa anterior é apagada
+3. Comece um novo teste
+
+Use isso quando quiser testar como a IA se comporta com um "cliente novo".
+
+## Preview vs. WhatsApp real
+
+| Aspecto | Preview | WhatsApp |
+|---------|---------|----------|
+| Agendamentos | Modo teste, não cria real | Cria agendamentos reais |
+| Velocidade | Pode ser mais rápido | Tem delay intencional |
+| Mensagens | Não conta no limite | Conta no limite do plano |
+| Cliente | Você simulando | Cliente real |
+
+## Problemas comuns
+
+### A IA responde diferente no WhatsApp
+
+Pequenas variações são normais. Se muito diferente:
+1. Teste novamente no preview
+2. Compare as configurações
+3. Verifique se salvou tudo
+
+### O preview está lento
+
+1. Verifique sua conexão
+2. Aguarde (processamento pode demorar)
+3. Se persistir, saia e entre novamente
+
+### A IA não usa minhas instruções
+
+1. Verifique se salvou as instruções
+2. Faça perguntas que ativem as instruções
+3. Instruções só são usadas quando relevantes
+
+### Quero testar agendamento real
+
+O preview não cria agendamentos reais por segurança. Para testar agendamento real:
+1. Use seu próprio WhatsApp como cliente
+2. Mande mensagem para o número conectado
+3. O agendamento será criado de verdade
+
+### A resposta está errada
+
+Identifique de onde vem a informação errada:
+
+| Informação | Onde corrigir |
+|------------|---------------|
+| Preço | Negócio → Ofertas |
+| Horário | Negócio → Horários |
+| Endereço | Negócio → Informações |
+| Tom | IA → Personalidade |
+| Regras | IA → Comportamento |
+
+Corrija, salve e teste novamente.
+
+## Dicas para testes eficientes
+
+### Teste cenários extremos
+
+```
+"Tem horário às 3 da manhã?" (fora do expediente)
+"Quero agendar para daqui 6 meses" (muito futuro)
+"Preciso de 5 horas seguidas" (duração inviável)
+```
+
+A IA deve responder adequadamente.
+
+### Teste perguntas fora do escopo
+
+```
+"Qual a previsão do tempo?"
+"Me indica um restaurante"
+"Qual sua opinião sobre política?"
+```
+
+A IA deve focar no seu negócio ou dizer educadamente que não pode ajudar.
+
+### Teste erros de digitação
+
+```
+"Ola" (sem acento)
+"qunto custa" (erro de digitação)
+"korte" (escrita errada)
+```
+
+A IA deve entender mesmo com pequenos erros.
+
+### Simule clientes difíceis
+
+```
+"Isso é muito caro"
+"Não gostei do último atendimento"
+"Quero falar com o gerente"
+```
+
+Veja se a IA lida bem com situações tensas.
+
+## Quando o teste está bom
+
+Você está pronto para liberar quando:
+
+- ✓ Informações básicas estão corretas
+- ✓ Fluxo de agendamento funciona
+- ✓ Tom está adequado ao negócio
+- ✓ Instruções específicas funcionam
+- ✓ Sabe quando não sabe responder
+- ✓ Você se sentiria confortável se um cliente recebesse essas respostas
+
+## Após os testes
+
+Quando estiver satisfeito:
+
+1. Confirme que o WhatsApp está conectado
+2. A IA já está atendendo!
+3. Monitore as primeiras conversas
+4. Ajuste se necessário
+
+## Próxima etapa
+
+<div class="not-prose mt-6">
+  <a href="/support/conta" class="inline-flex items-center gap-2 text-emerald-600 font-medium hover:text-emerald-700">
+    Continuar para: Conta e Configurações
+    <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+    </svg>
+  </a>
+</div>

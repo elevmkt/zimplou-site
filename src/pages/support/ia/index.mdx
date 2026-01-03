@@ -1,0 +1,177 @@
+---
+layout: ../../../layouts/DocsLayout.astro
+title: Configurando a IA
+description: Personalize como a inteligência artificial atende seus clientes.
+---
+
+A seção IA é onde você configura como o assistente virtual se comunica com seus clientes. Aqui você define a personalidade, o comportamento e testa as respostas antes de liberar para atendimento real.
+
+## Acessando
+
+No dashboard, toque no ícone **🤖 IA** no menu inferior.
+
+## O que você pode configurar
+
+### Personalidade
+
+Define **como** a IA se comunica:
+- Nível de formalidade
+- Quantidade de detalhes
+- Proatividade nas respostas
+
+[Configurar personalidade →](/support/ia/personalidade)
+
+### Comportamento
+
+Define **o que** a IA faz:
+- Instruções específicas
+- Regras de atendimento
+- Informações adicionais
+
+[Configurar comportamento →](/support/ia/comportamento)
+
+### Preview (Teste)
+
+Converse com a IA antes de liberar:
+- Simule conversas de clientes
+- Verifique se as respostas estão corretas
+- Ajuste e teste novamente
+
+[Usar o preview →](/support/ia/preview)
+
+## Como a IA funciona
+
+Quando um cliente manda mensagem no WhatsApp:
+
+1. **Recebe a mensagem** — O Zimplou captura a mensagem
+2. **Processa** — A IA analisa o que o cliente quer
+3. **Busca informações** — Consulta seus serviços, horários, preços
+4. **Gera resposta** — Cria uma resposta personalizada
+5. **Envia** — A resposta vai para o cliente
+
+Tudo isso acontece em segundos.
+
+## De onde a IA tira as informações
+
+A IA usa:
+
+| Fonte | O que pega |
+|-------|------------|
+| **Informações do negócio** | Nome, descrição, endereço |
+| **Ofertas** | Serviços, preços, duração |
+| **Horários** | Disponibilidade |
+| **Personalidade** | Tom, formalidade, proatividade |
+| **Comportamento** | Instruções específicas |
+
+Por isso é importante manter essas informações atualizadas!
+
+## O que a IA consegue fazer
+
+### Responder perguntas
+
+```
+Cliente: "Vocês fazem unha?"
+IA: "Sim! Fazemos manicure e pedicure.
+     A manicure custa R$ 40 e a pedicure R$ 50.
+     Quer agendar?"
+```
+
+### Mostrar disponibilidade
+
+```
+Cliente: "Tem horário sexta?"
+IA: "Sexta tenho disponível às 9h, 11h, 14h e 16h.
+     Qual horário é melhor pra você?"
+```
+
+### Fazer agendamentos
+
+```
+Cliente: "Quero às 14h"
+IA: "Ótimo! Agendei manicure para sexta às 14h.
+     Posso confirmar seu nome e telefone?"
+```
+
+### Dar informações
+
+```
+Cliente: "Onde vocês ficam?"
+IA: "Ficamos na Rua das Flores, 123 - Centro.
+     Tem estacionamento gratuito na frente!"
+```
+
+### Transferir para humano
+
+```
+Cliente: "Preciso falar com atendente"
+IA: "Claro! Vou encaminhar sua mensagem
+     para nossa equipe. Aguarde um momento."
+```
+
+## O que a IA NÃO consegue fazer
+
+- ❌ Responder áudios ou vídeos
+- ❌ Ver imagens enviadas
+- ❌ Acessar sistemas externos
+- ❌ Fazer cobranças diretamente
+- ❌ Resolver problemas complexos
+
+Para esses casos, a IA pode transferir para você.
+
+## Quando ajustar a IA
+
+Ajuste as configurações quando:
+
+- **Respostas não combinam com seu negócio** → Ajuste personalidade
+- **Falta informação importante** → Ajuste comportamento
+- **Tom está inadequado** → Ajuste formalidade
+- **IA não oferece agendamento** → Aumente proatividade
+
+## Problemas comuns
+
+### A IA diz algo errado
+
+1. Verifique de onde vem a informação errada:
+   - Serviços/preços? → Edite em **Negócio → Ofertas**
+   - Horários? → Edite em **Negócio → Horários**
+   - Outras? → Edite em **IA → Comportamento**
+2. Teste no preview
+3. Se correto no preview, aguarde sincronização
+
+### A IA parece "robótica"
+
+1. Vá em **IA → Personalidade**
+2. Aumente o nível de "Casual" na formalidade
+3. Teste no preview
+
+### A IA fala demais/pouco
+
+1. Vá em **IA → Personalidade**
+2. Ajuste o nível de "Detalhamento"
+3. Teste no preview
+
+### Quero que a IA diga algo específico
+
+1. Vá em **IA → Comportamento**
+2. Adicione nas instruções personalizadas
+3. Seja claro e específico
+4. Teste no preview
+
+## Guias detalhados
+
+<div class="not-prose mt-6 space-y-4">
+  <a href="/support/ia/personalidade" class="block p-4 border border-gray-200 rounded-lg hover:border-emerald-500 hover:bg-emerald-50 transition-colors">
+    <div class="font-medium text-gray-900">Personalidade</div>
+    <div class="text-sm text-gray-600">Configure formalidade, detalhamento e proatividade</div>
+  </a>
+
+  <a href="/support/ia/comportamento" class="block p-4 border border-gray-200 rounded-lg hover:border-emerald-500 hover:bg-emerald-50 transition-colors">
+    <div class="font-medium text-gray-900">Comportamento</div>
+    <div class="text-sm text-gray-600">Adicione instruções e regras específicas</div>
+  </a>
+
+  <a href="/support/ia/preview" class="block p-4 border border-gray-200 rounded-lg hover:border-emerald-500 hover:bg-emerald-50 transition-colors">
+    <div class="font-medium text-gray-900">Preview</div>
+    <div class="text-sm text-gray-600">Teste a IA antes de liberar para clientes</div>
+  </a>
+</div>

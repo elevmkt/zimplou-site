@@ -1,0 +1,548 @@
+---
+layout: ../../../layouts/DocsLayout.astro
+title: Configuração da IA
+description: Configure personalidade, tom e instruções do seu assistente virtual.
+---
+
+A aba de configuração da IA é onde você define como seu assistente virtual se comunica e se comporta. Aqui você ajusta a personalidade (tom e estilo) e adiciona instruções específicas para seu negócio.
+
+## Acessando
+
+1. No dashboard, toque em **IA**
+2. Você verá a aba de **Configuração** selecionada
+
+---
+
+## Personalidade
+
+A personalidade define como a IA se comunica com seus clientes. Ajustando três controles simples, você pode fazer a IA soar mais formal ou casual, mais direta ou detalhada, mais reativa ou proativa.
+
+### 1. Formalidade
+
+Define o tom da comunicação.
+
+<div class="not-prose my-4 overflow-x-auto">
+  <table class="w-full text-sm border border-slate-200 rounded-lg">
+    <thead class="bg-slate-50">
+      <tr>
+        <th class="text-left px-4 py-2 font-medium text-slate-900 border-b border-slate-200">Nível</th>
+        <th class="text-left px-4 py-2 font-medium text-slate-900 border-b border-slate-200">Características</th>
+        <th class="text-left px-4 py-2 font-medium text-slate-900 border-b border-slate-200">Exemplo</th>
+      </tr>
+    </thead>
+    <tbody class="text-slate-600">
+      <tr class="border-b border-slate-100">
+        <td class="px-4 py-2 font-medium">Casual</td>
+        <td class="px-4 py-2">Descontraído, amigável</td>
+        <td class="px-4 py-2">"E aí! Beleza? Bora marcar um horário?"</td>
+      </tr>
+      <tr class="border-b border-slate-100">
+        <td class="px-4 py-2 font-medium">Neutro</td>
+        <td class="px-4 py-2">Equilibrado, profissional</td>
+        <td class="px-4 py-2">"Olá! Como posso ajudar você hoje?"</td>
+      </tr>
+      <tr>
+        <td class="px-4 py-2 font-medium">Formal</td>
+        <td class="px-4 py-2">Sério, corporativo</td>
+        <td class="px-4 py-2">"Bom dia. Em que posso ser útil?"</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+**Como escolher:**
+
+<div class="not-prose my-4 overflow-x-auto">
+  <table class="w-full text-sm border border-slate-200 rounded-lg">
+    <thead class="bg-slate-50">
+      <tr>
+        <th class="text-left px-4 py-2 font-medium text-slate-900 border-b border-slate-200">Tipo de negócio</th>
+        <th class="text-left px-4 py-2 font-medium text-slate-900 border-b border-slate-200">Recomendação</th>
+      </tr>
+    </thead>
+    <tbody class="text-slate-600">
+      <tr class="border-b border-slate-100">
+        <td class="px-4 py-2">Salão, barbearia, estúdio</td>
+        <td class="px-4 py-2">Casual a Neutro</td>
+      </tr>
+      <tr class="border-b border-slate-100">
+        <td class="px-4 py-2">Clínica, consultório</td>
+        <td class="px-4 py-2">Neutro a Formal</td>
+      </tr>
+      <tr class="border-b border-slate-100">
+        <td class="px-4 py-2">Escritório (advogado, contador)</td>
+        <td class="px-4 py-2">Formal</td>
+      </tr>
+      <tr>
+        <td class="px-4 py-2">Academia, personal</td>
+        <td class="px-4 py-2">Casual a Neutro</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+### 2. Detalhamento
+
+Define quanto a IA explica nas respostas.
+
+<div class="not-prose my-4 overflow-x-auto">
+  <table class="w-full text-sm border border-slate-200 rounded-lg">
+    <thead class="bg-slate-50">
+      <tr>
+        <th class="text-left px-4 py-2 font-medium text-slate-900 border-b border-slate-200">Nível</th>
+        <th class="text-left px-4 py-2 font-medium text-slate-900 border-b border-slate-200">Características</th>
+        <th class="text-left px-4 py-2 font-medium text-slate-900 border-b border-slate-200">Quando usar</th>
+      </tr>
+    </thead>
+    <tbody class="text-slate-600">
+      <tr class="border-b border-slate-100">
+        <td class="px-4 py-2 font-medium">Direto</td>
+        <td class="px-4 py-2">Respostas curtas</td>
+        <td class="px-4 py-2">Alto volume de mensagens</td>
+      </tr>
+      <tr class="border-b border-slate-100">
+        <td class="px-4 py-2 font-medium">Equilibrado</td>
+        <td class="px-4 py-2">Informação adequada</td>
+        <td class="px-4 py-2">Maioria dos casos</td>
+      </tr>
+      <tr>
+        <td class="px-4 py-2 font-medium">Detalhado</td>
+        <td class="px-4 py-2">Explicações completas</td>
+        <td class="px-4 py-2">Serviços complexos</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+**Exemplo para "Quanto custa o corte?":**
+
+**Direto:**
+```
+R$ 80,00
+```
+
+**Equilibrado:**
+```
+O corte feminino custa R$ 80,00.
+Inclui lavagem e finalização.
+Quer agendar?
+```
+
+**Detalhado:**
+```
+O corte feminino custa R$ 80,00.
+
+O serviço inclui:
+- Avaliação do tipo de cabelo
+- Lavagem com produtos profissionais
+- Corte personalizado
+- Finalização com secador
+
+Duração aproximada: 45 minutos.
+
+Temos horários disponíveis amanhã às 10h, 14h e 16h.
+Gostaria de agendar?
+```
+
+### 3. Proatividade
+
+Define se a IA toma iniciativa ou só responde o que perguntam.
+
+<div class="not-prose my-4 overflow-x-auto">
+  <table class="w-full text-sm border border-slate-200 rounded-lg">
+    <thead class="bg-slate-50">
+      <tr>
+        <th class="text-left px-4 py-2 font-medium text-slate-900 border-b border-slate-200">Nível</th>
+        <th class="text-left px-4 py-2 font-medium text-slate-900 border-b border-slate-200">Comportamento</th>
+        <th class="text-left px-4 py-2 font-medium text-slate-900 border-b border-slate-200">Exemplo</th>
+      </tr>
+    </thead>
+    <tbody class="text-slate-600">
+      <tr class="border-b border-slate-100">
+        <td class="px-4 py-2 font-medium">Reativo</td>
+        <td class="px-4 py-2">Só responde a pergunta</td>
+        <td class="px-4 py-2">"O corte custa R$ 80." (para)</td>
+      </tr>
+      <tr class="border-b border-slate-100">
+        <td class="px-4 py-2 font-medium">Moderado</td>
+        <td class="px-4 py-2">Sugere próximo passo</td>
+        <td class="px-4 py-2">"O corte custa R$ 80. Quer agendar?"</td>
+      </tr>
+      <tr>
+        <td class="px-4 py-2 font-medium">Proativo</td>
+        <td class="px-4 py-2">Oferece informações extras</td>
+        <td class="px-4 py-2">"O corte custa R$ 80. Temos promoção hoje! Horários: 10h, 14h, 16h."</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+**Quando usar cada nível:**
+
+- **Reativo:** Clientes experientes que sabem o que querem
+- **Moderado:** Equilíbrio para a maioria dos negócios
+- **Proativo:** Quando quer maximizar conversões/agendamentos
+
+### Usando os controles
+
+1. Toque no controle deslizante
+2. Arraste para a esquerda ou direita
+3. Veja a prévia mudar em tempo real
+4. Toque em **Salvar** quando satisfeito
+
+---
+
+## Configurações recomendadas por negócio
+
+### Salão de beleza / Barbearia
+
+```
+Formalidade: Casual
+Detalhamento: Equilibrado
+Proatividade: Moderado a Proativo
+```
+
+**Por quê:** Ambiente descontraído, clientes querem agilidade mas também sugestões.
+
+### Clínica / Consultório
+
+```
+Formalidade: Neutro a Formal
+Detalhamento: Equilibrado a Detalhado
+Proatividade: Moderado
+```
+
+**Por quê:** Precisa passar confiança, informações claras, sem ser invasivo.
+
+### Personal trainer / Academia
+
+```
+Formalidade: Casual
+Detalhamento: Equilibrado
+Proatividade: Proativo
+```
+
+**Por quê:** Tom motivacional, incentivo para agendar.
+
+### Serviços profissionais (advogado, contador)
+
+```
+Formalidade: Formal
+Detalhamento: Detalhado
+Proatividade: Reativo
+```
+
+**Por quê:** Credibilidade, informação completa, sem parecer vendedor.
+
+---
+
+## Instruções personalizadas
+
+As instruções são regras específicas que você dá para a IA seguir. Enquanto a personalidade define o "como", as instruções definem o "o quê" a IA deve fazer em situações específicas.
+
+### Para que servem as instruções
+
+As instruções permitem:
+- Ensinar a IA sobre seu negócio
+- Definir regras de atendimento
+- Criar respostas para situações específicas
+- Adicionar informações que não estão em outros lugares
+
+### Como escrever boas instruções
+
+**Seja específico:**
+```
+Ruim: "Seja educado"
+Bom: "Sempre agradeça quando o cliente confirmar agendamento"
+
+Ruim: "Fale sobre promoções"
+Bom: "Se o cliente perguntar sobre preços, mencione que temos
+     10% de desconto para pagamento à vista"
+```
+
+**Use linguagem clara:**
+```
+Ruim: "Incentive os clientes a consumir mais serviços"
+Bom: "Quando o cliente agendar corte, pergunte se quer
+     incluir barba com desconto de R$10"
+```
+
+**Não exagere:**
+Muitas instruções confundem a IA. Foque no essencial.
+- Ruim: 50 instruções detalhadas sobre cada cenário
+- Bom: 5-10 instruções sobre situações importantes
+
+### Exemplos de instruções
+
+**Por tipo de negócio:**
+
+**Salão de beleza:**
+```
+- Sempre pergunte se é a primeira vez do cliente
+- Mencione que temos estacionamento gratuito
+- Para coloração, sugira avaliação antes de agendar
+- Informamos que aceitamos cartão, dinheiro e Pix
+```
+
+**Clínica:**
+```
+- Peça que o cliente traga documento e carteirinha do plano
+- Informe que a primeira consulta dura 1 hora
+- Não marque retornos com menos de 7 dias de intervalo
+- Se for urgência, peça para ligar no telefone da clínica
+```
+
+**Personal trainer:**
+```
+- Pergunte qual o objetivo (emagrecer, ganhar massa, etc.)
+- A primeira aula é uma avaliação gratuita
+- Ofereça pacote mensal após a primeira aula
+- Informe que o aluno deve trazer roupa confortável
+```
+
+**Situações comuns:**
+
+**Sobre pagamento:**
+```
+- Aceitamos cartão de crédito, débito, Pix e dinheiro
+- Parcelamos em até 3x sem juros acima de R$200
+- Pagamento deve ser feito na hora do atendimento
+```
+
+**Sobre cancelamento:**
+```
+- Cancelamentos devem ser feitos com 24h de antecedência
+- Em caso de no-show, cobramos 50% na próxima visita
+- Para remarcar, só perguntar um novo horário
+```
+
+**Sobre localização:**
+```
+- Ficamos no 2º andar do Edifício Central, sala 205
+- Entrada pela portaria principal
+- Estacionamento: usar o app EasyPark
+- Ponto de referência: em frente ao banco Itaú
+```
+
+### Informações que DEVEM estar nas instruções
+
+A IA pega de **Negócio** as informações básicas. Mas ela não sabe:
+
+<div class="not-prose my-4 overflow-x-auto">
+  <table class="w-full text-sm border border-slate-200 rounded-lg">
+    <thead class="bg-slate-50">
+      <tr>
+        <th class="text-left px-4 py-2 font-medium text-slate-900 border-b border-slate-200">A IA NÃO sabe</th>
+        <th class="text-left px-4 py-2 font-medium text-slate-900 border-b border-slate-200">Você precisa informar</th>
+      </tr>
+    </thead>
+    <tbody class="text-slate-600">
+      <tr class="border-b border-slate-100">
+        <td class="px-4 py-2">Formas de pagamento</td>
+        <td class="px-4 py-2">"Aceitamos cartão, Pix e dinheiro"</td>
+      </tr>
+      <tr class="border-b border-slate-100">
+        <td class="px-4 py-2">Estacionamento</td>
+        <td class="px-4 py-2">"Tem estacionamento gratuito"</td>
+      </tr>
+      <tr class="border-b border-slate-100">
+        <td class="px-4 py-2">Detalhes do local</td>
+        <td class="px-4 py-2">"2º andar, sala 205"</td>
+      </tr>
+      <tr class="border-b border-slate-100">
+        <td class="px-4 py-2">Políticas</td>
+        <td class="px-4 py-2">"Cancelamento com 24h"</td>
+      </tr>
+      <tr class="border-b border-slate-100">
+        <td class="px-4 py-2">Promoções temporárias</td>
+        <td class="px-4 py-2">"Desconto de 10% esse mês"</td>
+      </tr>
+      <tr>
+        <td class="px-4 py-2">Informações de acesso</td>
+        <td class="px-4 py-2">"Interfone para apartamento 31"</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+### Instruções de comportamento
+
+**Quando transferir para humano:**
+```
+- Se o cliente pedir para falar com atendente, transfira
+- Se a pergunta for sobre reclamação, transfira
+- Se não souber responder após 2 tentativas, transfira
+```
+
+**Como lidar com problemas:**
+```
+- Se cliente reclamar, peça desculpas e transfira para humano
+- Nunca discuta ou confronte o cliente
+- Em caso de dúvida, prefira dizer que vai verificar
+```
+
+**O que NÃO fazer:**
+```
+- Não invente preços ou informações
+- Não prometa coisas que não pode cumprir
+- Não dê conselhos médicos ou jurídicos
+```
+
+### Organização das instruções
+
+**Por tópico:**
+```
+# PAGAMENTO
+- Aceitamos cartão, Pix e dinheiro
+- Parcelamos em até 3x
+
+# LOCALIZAÇÃO
+- 2º andar, sala 205
+- Estacionamento gratuito no prédio
+
+# POLÍTICA
+- Cancelamento com 24h de antecedência
+```
+
+**Por prioridade:**
+```
+1. SEMPRE confirme o nome do cliente antes de agendar
+2. SEMPRE informe o endereço quando perguntarem localização
+3. Se perguntarem sobre preço, mencione desconto à vista
+4. Se for cliente novo, ofereça 10% de desconto
+```
+
+---
+
+## O que NÃO colocar nas instruções
+
+### Informações sigilosas
+
+```
+Não: "A senha do Wi-Fi é 12345678"
+Não: "O código do alarme é 9999"
+```
+
+### Preços e promoções temporárias
+
+Vai esquecer de atualizar. Use **Negócio → Ofertas** para preços.
+
+### Instruções éticas questionáveis
+
+```
+Não: "Minta sobre disponibilidade para parecer mais ocupado"
+Não: "Diga que o preço é X mas na hora cobre Y"
+```
+
+---
+
+## Problemas comuns
+
+### A IA está muito formal para meu negócio
+
+1. Mova o controle de **Formalidade** mais para a esquerda (Casual)
+2. Salve
+3. Teste no preview
+
+### A IA fala demais e cansa o cliente
+
+1. Diminua o **Detalhamento** (mais para Direto)
+2. Diminua a **Proatividade** (mais para Reativo)
+3. Salve e teste
+
+### A IA é muito curta e seca
+
+1. Aumente o **Detalhamento** (mais para Detalhado)
+2. Considere aumentar **Proatividade** também
+3. Salve e teste
+
+### A IA não oferece agendar
+
+1. Aumente a **Proatividade** (Moderado ou Proativo)
+2. Salve e teste
+3. A IA deve começar a sugerir agendamentos
+
+### A IA ignora minhas instruções
+
+Possíveis causas:
+1. **Instrução confusa:** Reescreva de forma mais clara
+2. **Instrução contraditória:** Verifique se não há conflito com outras
+3. **Instrução muito longa:** Simplifique
+4. **Não salvou:** Verifique se salvou após editar
+
+### A IA fica confusa
+
+Reduza as instruções. Muitas instruções = IA confusa.
+Teste com poucas instruções e vá adicionando aos poucos.
+
+### A instrução funciona às vezes
+
+A IA não é 100% determinística. Para instruções críticas:
+1. Seja mais específico
+2. Coloque no início da lista
+3. Use palavras fortes: "SEMPRE", "NUNCA"
+
+### As mudanças não estão funcionando
+
+1. Verifique se você salvou (toque em Salvar)
+2. Aguarde alguns segundos para sincronizar
+3. Teste no preview (não direto no WhatsApp)
+4. Se funcionar no preview, aguarde atualização no WhatsApp
+
+---
+
+## Dicas avançadas
+
+### Combine personalidade com instruções
+
+Os controles definem o tom geral. Para situações específicas, adicione instruções:
+
+```
+Controles: Neutro, Equilibrado, Moderado
+
+Instruções:
+- Quando cliente pedir desconto, responda de forma
+  mais formal que o padrão
+- Quando for primeira vez do cliente, seja mais
+  detalhado e acolhedor
+```
+
+### Revise periodicamente
+
+O tom ideal pode mudar:
+- No início, mais detalhado para educar clientes
+- Depois, mais direto quando já conhecem o negócio
+- Em épocas de promoção, mais proativo
+
+### Peça feedback
+
+Pergunte a clientes de confiança:
+- "Como você achou o atendimento pelo WhatsApp?"
+- "A mensagem foi clara?"
+- "Achou muito formal/informal?"
+
+---
+
+## Testando suas configurações
+
+Após ajustar personalidade ou instruções:
+
+1. Toque em **Salvar**
+2. Vá na aba **Testar** (ou **Preview**)
+3. Simule conversas como seus clientes fariam
+4. Ajuste novamente se necessário
+
+[Saiba mais sobre testes →](/support/ia/preview)
+
+---
+
+## Próxima etapa
+
+<div class="not-prose mt-6">
+  <a href="/support/ia/preview" class="inline-flex items-center gap-2 text-emerald-600 font-medium hover:text-emerald-700">
+    Continuar para: Testando a IA
+    <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+    </svg>
+  </a>
+</div>

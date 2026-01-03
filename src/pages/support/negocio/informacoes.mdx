@@ -1,0 +1,528 @@
+---
+layout: ../../../layouts/DocsLayout.astro
+title: Informações e horários do negócio
+description: Gerencie dados do seu negócio, endereço, contato e horários de funcionamento.
+---
+
+A aba de informações contém os dados básicos do seu negócio e os horários de funcionamento. Essas informações são usadas pela IA para responder clientes e aparecem na página de agendamento.
+
+## Acessando
+
+1. No dashboard, toque em **Negócio**
+2. Você verá a aba **Informações** selecionada
+
+---
+
+## Dados do negócio
+
+### Nome do negócio
+
+O nome como seus clientes conhecem você.
+
+**Boas práticas:**
+- Use o nome comercial, não razão social
+- Seja consistente com redes sociais
+- Exemplo: "Salão da Maria" (não "Maria Silva ME")
+
+**Onde aparece:**
+- Na IA quando ela se apresenta
+- Na página de agendamento
+- Em lembretes e notificações
+
+### Tipo de negócio
+
+Categoria que descreve seu segmento:
+- Salão de beleza / Barbearia
+- Clínica / Consultório
+- Academia / Estúdio fitness
+- Escola / Curso
+- Serviços profissionais
+- Outro
+
+**Por que importa:**
+- A IA adapta o vocabulário
+- Sugestões são personalizadas
+- Relatórios podem segmentar por tipo
+
+### Descrição
+
+Texto livre (2-4 frases) sobre seu negócio.
+
+**O que incluir:**
+- O que você faz
+- Seu diferencial
+- Informações importantes
+
+**Exemplo:**
+```
+Salão de beleza especializado em coloração e tratamentos capilares.
+Ambiente aconchegante no coração de Pinheiros.
+Atendemos com hora marcada.
+```
+
+**Onde aparece:**
+- A IA pode usar para responder perguntas
+- Na página de agendamento
+
+### Endereço
+
+Localização física do negócio.
+
+**Como editar:**
+1. Toque no campo de endereço
+2. Digite o novo endereço
+3. Selecione na lista de sugestões
+4. Confirme no mapa
+
+**Casos especiais:**
+- **Atendimento em domicílio:** Informe seu bairro/região
+- **Não quer divulgar:** Use apenas o bairro
+- **Múltiplas unidades:** Configure a principal aqui
+
+### Telefone
+
+Número para contato direto.
+
+**Dicas:**
+- Use o WhatsApp se for o mesmo número conectado
+- Clientes podem ligar se a IA não resolver
+- Formato: (11) 99999-9999
+
+### Email
+
+Email para contato e notificações.
+
+**Importante:**
+- Use um email que você verifica regularmente
+- Notificações importantes são enviadas aqui
+- Clientes geralmente não usam email para contato
+
+### Website / Redes sociais
+
+Links adicionais (opcional):
+- Site próprio
+- Instagram
+- Facebook
+- Outros
+
+---
+
+## Horários de funcionamento
+
+Os horários definem quando clientes podem agendar. A IA respeita esses horários e só oferece disponibilidade dentro deles.
+
+### Dias da semana
+
+Selecione os dias que você trabalha:
+
+```
+☑ Segunda    ☑ Terça    ☑ Quarta
+☑ Quinta     ☑ Sexta    ☑ Sábado
+☐ Domingo
+```
+
+### Horário de funcionamento
+
+Para cada dia selecionado:
+- **Início:** Quando você começa a atender
+- **Fim:** Quando você para de atender
+
+**Exemplo:**
+```
+Segunda a Sexta: 09:00 às 18:00
+Sábado: 09:00 às 14:00
+```
+
+### Intervalo (almoço/pausa)
+
+Se você faz pausa durante o dia:
+1. Ative **Intervalo**
+2. Defina início e fim do intervalo
+
+**Exemplo:**
+```
+Intervalo: 12:00 às 13:00
+```
+
+Durante o intervalo, não há disponibilidade para agendamentos.
+
+### Horários diferentes por dia
+
+Se cada dia tem horário diferente:
+
+1. Toque no dia que quer personalizar
+2. Configure horário específico
+3. Repita para outros dias
+
+**Exemplo:**
+```
+Segunda:    09:00 - 18:00
+Terça:      09:00 - 18:00
+Quarta:     09:00 - 20:00  (horário estendido)
+Quinta:     09:00 - 18:00
+Sexta:      09:00 - 18:00
+Sábado:     08:00 - 14:00  (horário diferente)
+```
+
+---
+
+## Configurações avançadas de horários
+
+### Intervalo entre agendamentos
+
+Tempo de preparo entre um cliente e outro:
+
+<div class="not-prose my-4 overflow-x-auto">
+  <table class="w-full text-sm border border-slate-200 rounded-lg">
+    <thead class="bg-slate-50">
+      <tr>
+        <th class="text-left px-4 py-2 font-medium text-slate-900 border-b border-slate-200">Configuração</th>
+        <th class="text-left px-4 py-2 font-medium text-slate-900 border-b border-slate-200">Resultado</th>
+      </tr>
+    </thead>
+    <tbody class="text-slate-600">
+      <tr class="border-b border-slate-100">
+        <td class="px-4 py-2">0 minutos</td>
+        <td class="px-4 py-2">Agendamentos sequenciais</td>
+      </tr>
+      <tr class="border-b border-slate-100">
+        <td class="px-4 py-2">15 minutos</td>
+        <td class="px-4 py-2">15 min de folga entre cada</td>
+      </tr>
+      <tr>
+        <td class="px-4 py-2">30 minutos</td>
+        <td class="px-4 py-2">30 min de folga entre cada</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+**Quando usar:**
+- Limpeza do espaço entre clientes
+- Organização de materiais
+- Descanso breve
+
+### Antecedência mínima
+
+Quanto tempo antes o cliente pode agendar:
+
+<div class="not-prose my-4 overflow-x-auto">
+  <table class="w-full text-sm border border-slate-200 rounded-lg">
+    <thead class="bg-slate-50">
+      <tr>
+        <th class="text-left px-4 py-2 font-medium text-slate-900 border-b border-slate-200">Configuração</th>
+        <th class="text-left px-4 py-2 font-medium text-slate-900 border-b border-slate-200">O que acontece</th>
+      </tr>
+    </thead>
+    <tbody class="text-slate-600">
+      <tr class="border-b border-slate-100">
+        <td class="px-4 py-2">1 hora</td>
+        <td class="px-4 py-2">Não aceita agendamentos com menos de 1h de antecedência</td>
+      </tr>
+      <tr class="border-b border-slate-100">
+        <td class="px-4 py-2">24 horas</td>
+        <td class="px-4 py-2">Precisa agendar com pelo menos 1 dia antes</td>
+      </tr>
+      <tr>
+        <td class="px-4 py-2">Sem limite</td>
+        <td class="px-4 py-2">Aceita agendamentos imediatos</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+**Recomendação:** 2-4 horas para a maioria dos negócios.
+
+### Antecedência máxima
+
+Até quando o cliente pode agendar no futuro:
+
+<div class="not-prose my-4 overflow-x-auto">
+  <table class="w-full text-sm border border-slate-200 rounded-lg">
+    <thead class="bg-slate-50">
+      <tr>
+        <th class="text-left px-4 py-2 font-medium text-slate-900 border-b border-slate-200">Configuração</th>
+        <th class="text-left px-4 py-2 font-medium text-slate-900 border-b border-slate-200">O que acontece</th>
+      </tr>
+    </thead>
+    <tbody class="text-slate-600">
+      <tr class="border-b border-slate-100">
+        <td class="px-4 py-2">7 dias</td>
+        <td class="px-4 py-2">Só vê disponibilidade da próxima semana</td>
+      </tr>
+      <tr class="border-b border-slate-100">
+        <td class="px-4 py-2">30 dias</td>
+        <td class="px-4 py-2">Pode agendar até 1 mês no futuro</td>
+      </tr>
+      <tr>
+        <td class="px-4 py-2">90 dias</td>
+        <td class="px-4 py-2">Pode agendar até 3 meses</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+**Dica:** Se você tem agenda variável, use prazo menor.
+
+### Horário de início dos slots
+
+Define em quais minutos os agendamentos começam:
+
+<div class="not-prose my-4 overflow-x-auto">
+  <table class="w-full text-sm border border-slate-200 rounded-lg">
+    <thead class="bg-slate-50">
+      <tr>
+        <th class="text-left px-4 py-2 font-medium text-slate-900 border-b border-slate-200">Configuração</th>
+        <th class="text-left px-4 py-2 font-medium text-slate-900 border-b border-slate-200">Slots disponíveis</th>
+      </tr>
+    </thead>
+    <tbody class="text-slate-600">
+      <tr class="border-b border-slate-100">
+        <td class="px-4 py-2">A cada 15 min</td>
+        <td class="px-4 py-2">9:00, 9:15, 9:30, 9:45...</td>
+      </tr>
+      <tr class="border-b border-slate-100">
+        <td class="px-4 py-2">A cada 30 min</td>
+        <td class="px-4 py-2">9:00, 9:30, 10:00...</td>
+      </tr>
+      <tr>
+        <td class="px-4 py-2">A cada hora</td>
+        <td class="px-4 py-2">9:00, 10:00, 11:00...</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+**Dica:** 30 minutos funciona bem para a maioria.
+
+---
+
+## Exceções e feriados
+
+### Bloquear um dia específico
+
+Para bloquear um dia (feriado, folga, compromisso):
+
+1. Na seção de exceções/dias bloqueados
+2. Toque em **+ Adicionar bloqueio**
+3. Selecione a data
+4. Opcionalmente, adicione descrição
+5. Salve
+
+**Exemplos:**
+- 25/12 - Natal
+- 01/01 - Ano Novo
+- Férias: 15/01 a 30/01
+
+### Horário especial em um dia
+
+Para ter horário diferente em data específica:
+
+1. Na seção de exceções
+2. Toque em **+ Horário especial**
+3. Selecione a data
+4. Configure o horário desse dia
+5. Salve
+
+**Exemplo:** Véspera de feriado, fechar mais cedo:
+- 24/12: 09:00 às 13:00
+
+### Feriados automáticos
+
+Alguns feriados nacionais podem ser bloqueados automaticamente:
+1. Na seção de feriados
+2. Selecione quais feriados bloquear
+3. Salve
+
+Os feriados selecionados ficam indisponíveis todo ano.
+
+---
+
+## Como a IA usa essas informações
+
+A IA usa essas informações para responder clientes:
+
+<div class="not-prose my-4 overflow-x-auto">
+  <table class="w-full text-sm border border-slate-200 rounded-lg">
+    <thead class="bg-slate-50">
+      <tr>
+        <th class="text-left px-4 py-2 font-medium text-slate-900 border-b border-slate-200">Pergunta do cliente</th>
+        <th class="text-left px-4 py-2 font-medium text-slate-900 border-b border-slate-200">IA busca em</th>
+      </tr>
+    </thead>
+    <tbody class="text-slate-600">
+      <tr class="border-b border-slate-100">
+        <td class="px-4 py-2">"Onde vocês ficam?"</td>
+        <td class="px-4 py-2">Endereço</td>
+      </tr>
+      <tr class="border-b border-slate-100">
+        <td class="px-4 py-2">"Qual o telefone?"</td>
+        <td class="px-4 py-2">Telefone</td>
+      </tr>
+      <tr class="border-b border-slate-100">
+        <td class="px-4 py-2">"O que vocês fazem?"</td>
+        <td class="px-4 py-2">Descrição + Tipo</td>
+      </tr>
+      <tr class="border-b border-slate-100">
+        <td class="px-4 py-2">"Tem horário amanhã?"</td>
+        <td class="px-4 py-2">Horários de funcionamento</td>
+      </tr>
+      <tr>
+        <td class="px-4 py-2">"Vocês abrem no sábado?"</td>
+        <td class="px-4 py-2">Dias da semana configurados</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+### Exemplos de respostas da IA
+
+**Oferecendo disponibilidade:**
+```
+Cliente: "Tem horário amanhã?"
+IA: "Amanhã tenho às 10h, 14h e 16h.
+     Qual prefere?"
+```
+
+**Recusando horário indisponível:**
+```
+Cliente: "Quero às 8h"
+IA: "Infelizmente não atendemos às 8h.
+     Nosso horário é das 9h às 18h.
+     Posso te encaixar às 9h?"
+```
+
+**Respeitando feriados:**
+```
+Cliente: "Quero marcar dia 25/12"
+IA: "No dia 25 estaremos fechados pelo Natal.
+     O próximo horário disponível é dia 26 às 9h."
+```
+
+### Dicas para a IA responder bem
+
+Na descrição, inclua informações que clientes perguntam frequentemente:
+- Estacionamento disponível
+- Formas de pagamento aceitas
+- Se precisa de agendamento prévio
+- Acessibilidade
+
+---
+
+## Sincronização com Google Agenda
+
+Se você conectou o Google Agenda (disponível no plano **Grow**):
+- Eventos do Google bloqueiam horários automaticamente
+- Não precisa bloquear manualmente no Zimplou
+- A sincronização é em tempo real
+
+[Saiba mais sobre Google Agenda →](/support/integracoes/google-agenda)
+
+---
+
+## Problemas comuns
+
+### O Google não encontra meu endereço
+
+Tente:
+1. Variações (com/sem número)
+2. Adicionar o CEP
+3. Nome do edifício ou condomínio
+4. Ponto de referência próximo
+
+Se nada funcionar, escolha o local mais próximo e ajuste a descrição.
+
+### Mudei o endereço mas a IA fala o antigo
+
+1. Verifique se você salvou após a mudança
+2. Aguarde alguns minutos para a atualização propagar
+3. Teste no preview da IA
+4. Se persistir, tente salvar novamente
+
+### Cliente conseguiu agendar em horário que deveria estar fechado
+
+Possíveis causas:
+1. O horário não estava salvo corretamente
+2. A exceção não foi criada
+3. Sincronização com Google ainda não atualizou
+
+**Solução:** Verifique os horários, corrija e entre em contato com o cliente.
+
+### A IA não oferece horários disponíveis
+
+Verifique:
+1. Os horários estão configurados corretamente?
+2. Há slots disponíveis (não bloqueados)?
+3. A duração do serviço cabe nos slots?
+4. A antecedência mínima permite?
+
+### Quero trabalhar só pela manhã um dia
+
+1. Toque no dia específico
+2. Altere o horário de fim para 12:00 (ou sua preferência)
+3. Salve
+
+### Tenho dois turnos separados
+
+Configure usando intervalo ou horários diferentes:
+
+**Opção 1 - Intervalo longo:**
+```
+Horário: 08:00 - 20:00
+Intervalo: 12:00 - 15:00
+```
+
+**Opção 2 - Descrição:**
+Explique na descrição que funciona em dois turnos.
+
+### Mudei de horário mas clientes ainda veem o antigo
+
+1. Verifique se salvou as alterações
+2. Peça para o cliente atualizar a página
+3. Aguarde alguns minutos para propagação
+4. Teste você mesmo no preview da IA
+
+---
+
+## Privacidade
+
+### O que é público
+
+Essas informações podem ser vistas por clientes:
+- Nome do negócio
+- Tipo
+- Descrição
+- Endereço (se você incluir)
+
+### O que é privado
+
+Esses dados não são exibidos diretamente:
+- Email (usado apenas para notificações)
+- Telefone (só se você configurar para mostrar)
+
+---
+
+## Dicas de produtividade
+
+### Deixe folga entre clientes
+
+5-15 minutos entre atendimentos evita atrasos em cascata.
+
+### Bloqueie com antecedência
+
+Sabe que vai viajar em 2 meses? Bloqueie agora para não esquecer.
+
+### Revisão periódica
+
+Revise seus horários mensalmente para garantir que estão atualizados.
+
+## Próxima etapa
+
+<div class="not-prose mt-6">
+  <a href="/support/negocio/ofertas" class="inline-flex items-center gap-2 text-emerald-600 font-medium hover:text-emerald-700">
+    Continuar para: Ofertas e serviços
+    <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+    </svg>
+  </a>
+</div>

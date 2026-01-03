@@ -1,0 +1,66 @@
+---
+layout: ../../../layouts/DocsLayout.astro
+title: Conectando integrações
+description: Configure as integrações para ativar todos os recursos do Zimplou.
+---
+
+Após criar sua conta e configurar seu negócio, você precisa conectar as integrações para começar a atender clientes. Esta é a última etapa antes de usar o dashboard completo.
+
+## Por que conectar integrações?
+
+As integrações permitem que o Zimplou:
+
+| Integração | O que faz |
+|------------|-----------|
+| **Stripe Connect** | Recebe pagamentos dos clientes e transfere para sua conta |
+| **Google Agenda** | Sincroniza agendamentos com seu calendário |
+| **WhatsApp** | Permite que a IA responda seus clientes automaticamente |
+
+## Quais integrações você precisa?
+
+Depende do seu plano e das funcionalidades que você escolheu:
+
+### Plano Zap (Atendimento)
+- **WhatsApp** — Obrigatório para atendimento automático
+- **Stripe Connect** — Opcional, para receber pagamentos
+
+### Plano Grow (Agendamento)
+- **WhatsApp** — Obrigatório
+- **Stripe Connect** — Opcional, para receber pagamentos
+- **Google Agenda** — Opcional, para sincronização de calendário
+
+## Ordem de configuração
+
+O assistente de integrações mostra apenas as integrações disponíveis no seu plano. A ordem recomendada é:
+
+1. **Stripe Connect** (se disponível) — Configure primeiro para já estar pronto para receber
+2. **Google Agenda** (se disponível) — Sincronize seu calendário
+3. **WhatsApp** — Conecte por último, pois ativa o atendimento imediatamente
+
+> **Importante:** Você pode pular integrações e configurá-las depois no dashboard. Mas o WhatsApp é essencial para que a IA funcione.
+
+## Posso configurar depois?
+
+**Sim!** Você pode:
+- Pular qualquer integração durante a configuração inicial
+- Conectar integrações depois em **Conta → Integrações**
+- Desconectar e reconectar a qualquer momento
+
+## Guias de cada integração
+
+<div class="not-prose mt-6 space-y-4">
+  <a href="/support/integracoes/stripe" class="block p-4 border border-gray-200 rounded-lg hover:border-emerald-500 hover:bg-emerald-50 transition-colors">
+    <div class="font-medium text-gray-900">Stripe Connect</div>
+    <div class="text-sm text-gray-600">Configure para receber pagamentos online dos seus clientes</div>
+  </a>
+
+  <a href="/support/integracoes/google-agenda" class="block p-4 border border-gray-200 rounded-lg hover:border-emerald-500 hover:bg-emerald-50 transition-colors">
+    <div class="font-medium text-gray-900">Google Agenda</div>
+    <div class="text-sm text-gray-600">Sincronize agendamentos com seu calendário existente</div>
+  </a>
+
+  <a href="/support/integracoes/whatsapp" class="block p-4 border border-gray-200 rounded-lg hover:border-emerald-500 hover:bg-emerald-50 transition-colors">
+    <div class="font-medium text-gray-900">WhatsApp</div>
+    <div class="text-sm text-gray-600">Conecte seu número para atendimento automático com IA</div>
+  </a>
+</div>

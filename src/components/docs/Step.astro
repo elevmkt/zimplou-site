@@ -1,0 +1,25 @@
+---
+/**
+ * Step Component
+ *
+ * Individual step item for use within <Steps>.
+ *
+ * Usage in MDX:
+ * <Step title="Do this thing">
+ *   Explanation of the step
+ * </Step>
+ */
+
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<div class="step">
+  <h4 class="text-base font-semibold text-slate-900 mb-2 mt-0.5">{title}</h4>
+  <div class="text-sm text-slate-600 [&>p]:m-0 [&>ul]:m-0 [&>ul]:mt-2 [&>ol]:m-0 [&>ol]:mt-2 [&>p+p]:mt-2">
+    <slot />
+  </div>
+</div>

@@ -1,0 +1,226 @@
+---
+layout: ../../../layouts/DocsLayout.astro
+title: Finanças
+description: Acompanhe pagamentos, faturamento e relatórios financeiros.
+---
+
+A seção de Finanças permite acompanhar os pagamentos recebidos através do Stripe Connect. O Stripe Connect está disponível nos planos **Zap** e **Grow**.
+
+## Requisitos
+
+Para acessar a seção de Finanças:
+- ✓ Ter o **Stripe Connect** conectado
+- ✓ Ter recebido pelo menos um pagamento
+
+Se você não tem Stripe conectado, verá uma mensagem para configurar a integração.
+
+## Visão geral
+
+A tela de Finanças mostra:
+
+### Resumo do período
+
+No topo, você vê:
+
+| Métrica | Descrição |
+|---------|-----------|
+| **Faturamento** | Total recebido no período |
+| **Transações** | Número de pagamentos |
+| **Ticket médio** | Valor médio por transação |
+| **Pendente** | Valores ainda não transferidos |
+
+### Gráfico de faturamento
+
+Um gráfico mostra a evolução do faturamento:
+- **Diário** — Últimos 7 dias
+- **Semanal** — Últimas 4 semanas
+- **Mensal** — Últimos 12 meses
+
+### Lista de transações
+
+Abaixo do gráfico, todas as transações do período:
+
+```
+23 Jan  Corte - João Silva         R$ 50,00  ✓ Pago
+22 Jan  Coloração - Maria Santos   R$ 200,00 ✓ Pago
+21 Jan  Escova - Ana Paula         R$ 60,00  ✓ Pago
+```
+
+## Filtros de período
+
+Para ver dados de diferentes períodos:
+
+1. Toque no seletor de período no topo
+2. Escolha:
+   - **Hoje**
+   - **Esta semana**
+   - **Este mês**
+   - **Últimos 30 dias**
+   - **Personalizado** — Escolha datas específicas
+
+## Detalhes de uma transação
+
+Toque em qualquer transação para ver:
+
+| Campo | Exemplo |
+|-------|---------|
+| **Data/hora** | 23 Jan 2024, 14:30 |
+| **Cliente** | João Silva |
+| **Serviço** | Corte masculino |
+| **Valor bruto** | R$ 50,00 |
+| **Taxa Stripe** | R$ 2,39 |
+| **Valor líquido** | R$ 47,61 |
+| **Status** | Pago / Reembolsado |
+| **ID da transação** | pi_1234567890 |
+
+## Status dos pagamentos
+
+| Status | Significado |
+|--------|-------------|
+| **Pago** | Pagamento confirmado e processado |
+| **Pendente** | Aguardando confirmação do cartão |
+| **Falhou** | Pagamento não foi aprovado |
+| **Reembolsado** | Valor devolvido ao cliente |
+| **Disputado** | Cliente contestou a cobrança |
+
+## Transferências
+
+O dinheiro recebido é transferido automaticamente para sua conta bancária:
+
+### Prazo de transferência
+
+Por padrão, o Stripe transfere em **D+2** (dois dias úteis):
+- Pagamento na segunda → Recebe na quarta
+- Pagamento na sexta → Recebe na terça
+
+### Ver transferências
+
+1. Na seção de Finanças, toque em **Transferências**
+2. Veja o histórico de valores enviados para sua conta
+
+## Reembolsos
+
+Se precisar devolver o dinheiro ao cliente:
+
+### Fazer reembolso total
+
+1. Encontre a transação
+2. Toque em **Reembolsar**
+3. Confirme o valor total
+4. O cliente recebe o estorno no cartão
+
+### Fazer reembolso parcial
+
+1. Encontre a transação
+2. Toque em **Reembolsar**
+3. Digite o valor a devolver
+4. Confirme
+
+> **Prazo:** O estorno aparece na fatura do cliente em 5-10 dias úteis, dependendo do banco.
+
+## Relatórios
+
+### Exportar dados
+
+Para baixar um relatório:
+1. Defina o período desejado
+2. Toque em **Exportar** ou ícone de download
+3. Escolha o formato (CSV ou PDF)
+4. O arquivo é baixado ou enviado por email
+
+### Relatório para contador
+
+O relatório em CSV contém todos os dados necessários para contabilidade:
+- Data
+- Descrição
+- Valor bruto
+- Taxas
+- Valor líquido
+- Status
+
+## Taxas
+
+O Stripe cobra taxas por transação. As taxas são automaticamente descontadas:
+
+| Forma de pagamento | Taxa aproximada |
+|-------------------|-----------------|
+| **Cartão de crédito** | 3,99% + R$ 0,39 |
+| **Cartão de débito** | 2,99% + R$ 0,39 |
+
+Exemplo:
+- Cliente paga R$ 100,00
+- Taxa do Stripe: R$ 4,38
+- Você recebe: R$ 95,62
+
+## Problemas comuns
+
+### Não vejo a seção de Finanças
+
+Verifique:
+1. O Stripe está conectado?
+2. Você já recebeu algum pagamento?
+
+Se estiver tudo certo e ainda não vê, atualize o app.
+
+### Pagamento aparece como "Pendente" há muito tempo
+
+Pagamentos pendentes por mais de 24 horas podem indicar:
+- Problema no cartão do cliente
+- Revisão antifraude do Stripe
+
+O Stripe geralmente resolve automaticamente. Se persistir, verifique no dashboard do Stripe.
+
+### Cliente diz que pagou mas não aparece
+
+1. Verifique se o pagamento foi realmente concluído no app do cliente
+2. Aguarde alguns minutos (pode haver delay)
+3. Verifique no dashboard.stripe.com diretamente
+4. Se foi pago fora do Zimplou (Pix direto, dinheiro), não aparecerá aqui
+
+### Quero ver pagamentos fora do Zimplou
+
+A seção de Finanças mostra apenas pagamentos processados pelo Stripe através do Zimplou. Pagamentos em dinheiro, Pix direto, ou outros métodos não aparecem aqui.
+
+### O valor transferido é menor que o esperado
+
+Lembre-se das taxas do Stripe. O valor líquido (após taxas) é o que você recebe. Veja os detalhes de cada transação para ver as taxas cobradas.
+
+### Como contesto uma disputa?
+
+Se um cliente contestou uma cobrança (chargeback):
+1. Você recebe notificação por email do Stripe
+2. Acesse dashboard.stripe.com
+3. Na seção Disputas, veja os detalhes
+4. Envie evidências (comprovante do serviço, comunicação com cliente)
+5. Aguarde a decisão do banco
+
+## Dicas financeiras
+
+### Acompanhe regularmente
+
+Verifique suas finanças pelo menos uma vez por semana para:
+- Identificar pagamentos pendentes
+- Acompanhar o faturamento
+- Detectar problemas cedo
+
+### Configure alertas
+
+No dashboard do Stripe, você pode configurar alertas para:
+- Novos pagamentos
+- Disputas
+- Transferências
+
+### Mantenha registros
+
+Mesmo com os relatórios do Zimplou, mantenha seus próprios registros financeiros para controle e declaração de impostos.
+
+## Próxima etapa
+
+<div class="not-prose mt-6">
+  <a href="/support/dashboard/metricas" class="inline-flex items-center gap-2 text-emerald-600 font-medium hover:text-emerald-700">
+    Continuar para: Métricas
+    <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+    </svg>
+  </a>
+</div>

@@ -1,0 +1,193 @@
+---
+layout: ../../../layouts/DocsLayout.astro
+title: Google Agenda
+description: Sincronize seus agendamentos do Zimplou com o Google Calendar.
+---
+
+A integração com o Google Agenda permite sincronizar seus compromissos entre o Zimplou e seu calendário. Disponível apenas no plano **Grow**.
+
+---
+
+## O que a integração faz?
+
+Com o Google Agenda conectado:
+
+- **Agendamentos aparecem no Google** — Quando um cliente marca horário no Zimplou, o evento é criado automaticamente no seu Google Agenda
+- **Horários bloqueados** — Eventos no seu Google Agenda bloqueiam automaticamente os horários no Zimplou
+- **Lembretes** — Receba notificações do Google sobre seus compromissos
+- **Sincronização bidirecional** — Alterações são refletidas em ambas as plataformas
+
+---
+
+## Antes de começar
+
+Você vai precisar de:
+
+- Uma conta Google (Gmail)
+- Acesso ao Google Agenda (calendar.google.com)
+- Estar no plano **Grow**
+
+---
+
+## Como conectar
+
+### 1. No Zimplou
+
+Vá em **Conta → Integrações** e toque em **Conectar** no card do Google Agenda. Uma janela do Google vai abrir.
+
+### 2. Fazer login no Google
+
+Faça login na sua conta Google. Se você tem mais de uma conta, selecione a que deseja usar.
+
+<div class="not-prose my-6 rounded-lg border border-blue-200 bg-blue-50 p-4">
+  <p class="font-medium text-blue-900 mb-2">Informações do Google sobre acesso de apps terceiros</p>
+  <p class="text-blue-800 text-sm mb-3">Para desbloquear determinados recursos, você pode conceder a apps e serviços de terceiros algum acesso aos dados da sua Conta do Google.</p>
+  <p class="text-blue-800 text-sm mb-2"><strong>Como funciona a autorização:</strong></p>
+  <ol class="text-blue-800 text-sm list-decimal list-inside space-y-1 mb-3">
+    <li>O app solicita permissão para acessar dados específicos</li>
+    <li>Revise cuidadosamente quais informações e permissões são solicitadas</li>
+    <li>Se você decidir compartilhar o acesso, faça login na sua Conta do Google</li>
+    <li>Autorize o app a ter acesso aos dados solicitados</li>
+  </ol>
+  <a href="https://support.google.com/accounts/answer/14012355" target="_blank" rel="noopener noreferrer" class="text-blue-700 hover:underline text-sm font-medium">Ver documentação completa no Google Account Help →</a>
+</div>
+
+### 3. Autorizar o acesso
+
+O Google mostra quais permissões o Zimplou precisa:
+
+<div class="not-prose my-4 overflow-x-auto">
+  <table class="w-full text-sm border border-slate-200 rounded-lg">
+    <thead class="bg-slate-50">
+      <tr>
+        <th class="text-left px-4 py-2 font-medium text-slate-900 border-b border-slate-200">Permissão</th>
+        <th class="text-left px-4 py-2 font-medium text-slate-900 border-b border-slate-200">Por que é necessária</th>
+      </tr>
+    </thead>
+    <tbody class="text-slate-600">
+      <tr class="border-b border-slate-100">
+        <td class="px-4 py-2">Ver seus calendários</td>
+        <td class="px-4 py-2">Para listar seus calendários disponíveis</td>
+      </tr>
+      <tr class="border-b border-slate-100">
+        <td class="px-4 py-2">Ver eventos</td>
+        <td class="px-4 py-2">Para verificar horários já ocupados</td>
+      </tr>
+      <tr class="border-b border-slate-100">
+        <td class="px-4 py-2">Criar eventos</td>
+        <td class="px-4 py-2">Para adicionar agendamentos quando clientes marcam</td>
+      </tr>
+      <tr class="border-b border-slate-100">
+        <td class="px-4 py-2">Editar eventos</td>
+        <td class="px-4 py-2">Para atualizar quando cliente remarca</td>
+      </tr>
+      <tr>
+        <td class="px-4 py-2">Excluir eventos</td>
+        <td class="px-4 py-2">Para remover quando cliente cancela</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+> **Importante:** O Zimplou **não** acessa seus emails, arquivos do Drive, contatos ou qualquer outro dado além do calendário.
+
+Toque em **Permitir** para autorizar.
+
+### 4. Escolha o calendário
+
+Selecione qual calendário usar para os agendamentos e toque em **Confirmar**.
+
+### 5. Pronto
+
+O status muda para **Conectado**. Seus agendamentos serão sincronizados automaticamente.
+
+---
+
+## Gerenciar conexões da sua conta Google
+
+<div class="not-prose my-6 rounded-lg border border-blue-200 bg-blue-50 p-4">
+  <p class="font-medium text-blue-900 mb-2">Como revisar e remover acesso de apps</p>
+  <p class="text-blue-800 text-sm mb-2"><strong>Para ver apps conectados à sua conta:</strong></p>
+  <ol class="text-blue-800 text-sm list-decimal list-inside space-y-1 mb-3">
+    <li>Acesse a página de conexões de terceiros da sua Conta Google</li>
+    <li>Selecione "Acesso à sua Conta do Google"</li>
+    <li>Selecione o app ou serviço que deseja revisar</li>
+  </ol>
+  <p class="text-blue-800 text-sm mb-2"><strong>Para remover acesso de um app:</strong></p>
+  <ol class="text-blue-800 text-sm list-decimal list-inside space-y-1 mb-3">
+    <li>Revise o acesso que o app tem à sua conta</li>
+    <li>Se quiser remover, selecione <strong>Remover acesso</strong></li>
+    <li>Confirme a remoção</li>
+  </ol>
+  <div class="flex flex-col gap-1">
+    <a href="https://myaccount.google.com/connections" target="_blank" rel="noopener noreferrer" class="text-blue-700 hover:underline text-sm font-medium">Gerenciar apps conectados →</a>
+    <a href="https://support.google.com/accounts/answer/13533235" target="_blank" rel="noopener noreferrer" class="text-blue-700 hover:underline text-sm font-medium">Ver documentação completa →</a>
+  </div>
+</div>
+
+---
+
+## Criar um calendário específico
+
+Recomendamos criar um calendário separado para o Zimplou:
+
+1. Acesse [calendar.google.com](https://calendar.google.com)
+2. Clique em **+** ao lado de "Outros calendários"
+3. Selecione **Criar novo calendário**
+4. Digite um nome (ex: "Atendimentos")
+5. Clique em **Criar calendário**
+
+Depois, desconecte e reconecte no Zimplou para selecionar o novo calendário.
+
+---
+
+## Desconectar
+
+**Pelo Zimplou:** Vá em **Conta → Integrações** e toque em **Desconectar**.
+
+**Pelo Google:** Acesse [myaccount.google.com/connections](https://myaccount.google.com/connections), encontre "Zimplou" e clique em **Remover acesso**.
+
+---
+
+## Solução de problemas
+
+<div class="not-prose my-4 overflow-x-auto">
+  <table class="w-full text-sm border border-slate-200 rounded-lg">
+    <thead class="bg-slate-50">
+      <tr>
+        <th class="text-left px-4 py-2 font-medium text-slate-900 border-b border-slate-200">Problema</th>
+        <th class="text-left px-4 py-2 font-medium text-slate-900 border-b border-slate-200">O que fazer</th>
+      </tr>
+    </thead>
+    <tbody class="text-slate-600">
+      <tr class="border-b border-slate-100">
+        <td class="px-4 py-2">Janela do Google não abre</td>
+        <td class="px-4 py-2">Desative o bloqueador de pop-ups</td>
+      </tr>
+      <tr class="border-b border-slate-100">
+        <td class="px-4 py-2">Calendário não aparece</td>
+        <td class="px-4 py-2">Verifique se está logado na conta correta</td>
+      </tr>
+      <tr class="border-b border-slate-100">
+        <td class="px-4 py-2">Eventos não sincronizam</td>
+        <td class="px-4 py-2">Aguarde alguns minutos ou reconecte</td>
+      </tr>
+      <tr>
+        <td class="px-4 py-2">Erro de permissão</td>
+        <td class="px-4 py-2">Certifique-se de clicar em "Permitir"</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+---
+
+## Links úteis
+
+- [Compartilhar acesso com apps terceiros](https://support.google.com/accounts/answer/14012355) — Google Account Help
+- [Gerenciar conexões de terceiros](https://support.google.com/accounts/answer/13533235) — Google Account Help
+- [Criar um novo calendário](https://support.google.com/calendar/answer/37095) — Google Calendar Help
+
+---
+
+**Próximo passo:** [Conectar WhatsApp →](/support/integracoes/whatsapp)

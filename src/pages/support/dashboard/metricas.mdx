@@ -1,0 +1,283 @@
+---
+layout: ../../../layouts/DocsLayout.astro
+title: Métricas
+description: Estatísticas e relatórios para entender o desempenho do seu negócio.
+---
+
+A seção de Métricas oferece uma visão analítica do seu negócio. Entenda padrões de agendamento, horários mais procurados, serviços populares e muito mais.
+
+## Métricas disponíveis
+
+As métricas variam conforme seu plano:
+
+<div class="not-prose my-4 overflow-x-auto">
+  <table class="w-full text-sm border border-slate-200 rounded-lg">
+    <thead class="bg-slate-50">
+      <tr>
+        <th class="text-left px-4 py-2 font-medium text-slate-900 border-b border-slate-200">Métrica</th>
+        <th class="text-left px-4 py-2 font-medium text-slate-900 border-b border-slate-200">Zap</th>
+        <th class="text-left px-4 py-2 font-medium text-slate-900 border-b border-slate-200">Grow</th>
+      </tr>
+    </thead>
+    <tbody class="text-slate-600">
+      <tr class="border-b border-slate-100">
+        <td class="px-4 py-2">Métricas de mensagens</td>
+        <td class="px-4 py-2">✓</td>
+        <td class="px-4 py-2">✓</td>
+      </tr>
+      <tr class="border-b border-slate-100">
+        <td class="px-4 py-2">Métricas de pagamentos</td>
+        <td class="px-4 py-2">✓</td>
+        <td class="px-4 py-2">✓</td>
+      </tr>
+      <tr class="border-b border-slate-100">
+        <td class="px-4 py-2">Tempo economizado</td>
+        <td class="px-4 py-2">✓</td>
+        <td class="px-4 py-2">✓</td>
+      </tr>
+      <tr class="border-b border-slate-100">
+        <td class="px-4 py-2">Métricas de calendário</td>
+        <td class="px-4 py-2">✗</td>
+        <td class="px-4 py-2">✓</td>
+      </tr>
+      <tr class="border-b border-slate-100">
+        <td class="px-4 py-2">Métricas de agendamentos</td>
+        <td class="px-4 py-2">✗</td>
+        <td class="px-4 py-2">✓</td>
+      </tr>
+      <tr class="border-b border-slate-100">
+        <td class="px-4 py-2">Analytics e conversões</td>
+        <td class="px-4 py-2">✗</td>
+        <td class="px-4 py-2">✓</td>
+      </tr>
+      <tr>
+        <td class="px-4 py-2">Autonomia da IA</td>
+        <td class="px-4 py-2">✗</td>
+        <td class="px-4 py-2">✓</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+## Painel de métricas
+
+### Resumo rápido
+
+No topo, cards com números principais:
+
+```
+┌─────────────┐ ┌─────────────┐ ┌─────────────┐
+│ 47          │ │ 78%         │ │ 12%         │
+│ Agendamentos│ │ Ocupação    │ │ Cancelamento│
+│ este mês    │ │ média       │ │ rate        │
+└─────────────┘ └─────────────┘ └─────────────┘
+```
+
+### Comparativo
+
+Abaixo de cada número, uma comparação com o período anterior:
+- **↑ 15%** — Aumento em relação ao mês passado
+- **↓ 5%** — Diminuição
+- **→ 0%** — Sem mudança
+
+## Entendendo cada métrica
+
+### Agendamentos
+
+Número total de atendimentos marcados no período.
+
+**O que significa:**
+- Alto = Negócio movimentado
+- Baixo = Pode indicar necessidade de divulgação
+
+**Dica:** Compare com meses anteriores para identificar sazonalidade.
+
+### Taxa de ocupação
+
+Porcentagem dos horários disponíveis que foram preenchidos.
+
+```
+Ocupação = (Horários preenchidos / Horários disponíveis) × 100
+```
+
+**Exemplo:**
+- Você disponibiliza 40 horários na semana
+- 30 foram agendados
+- Ocupação = 75%
+
+**O que significa:**
+- Acima de 80% = Muito bem, considere expandir horários
+- 50-80% = Normal para a maioria dos negócios
+- Abaixo de 50% = Há espaço para crescer
+
+### Serviços mais populares
+
+Ranking dos serviços mais agendados:
+
+```
+1. Corte masculino     35%  ████████████
+2. Corte feminino      25%  █████████
+3. Escova              20%  ███████
+4. Coloração           15%  █████
+5. Outros               5%  ██
+```
+
+**Como usar:**
+- Foque marketing nos serviços populares
+- Considere promoções nos menos procurados
+- Identifique se algum serviço deveria ser descontinuado
+
+### Horários mais procurados
+
+Mapa de calor mostrando demanda por horário:
+
+```
+       Seg  Ter  Qua  Qui  Sex  Sáb
+08:00   ░    ░    ░    ░    ░    █
+09:00   ░    █    ░    ░    █    █
+10:00   █    █    ░    █    █    █
+11:00   █    █    █    █    █    █
+...
+```
+
+**Como usar:**
+- Considere preços diferenciados (mais caro em horários de pico)
+- Ofereça promoções em horários vazios
+- Ajuste seus horários de disponibilidade
+
+### Taxa de cancelamento
+
+Porcentagem de agendamentos cancelados:
+
+```
+Cancelamento = (Cancelados / Total agendados) × 100
+```
+
+**O que significa:**
+- Abaixo de 10% = Normal
+- 10-20% = Atenção, investigue causas
+- Acima de 20% = Problema sério
+
+**Possíveis causas de alto cancelamento:**
+- Confirmação muito antecipada
+- Política de cancelamento muito flexível
+- Clientes inseguros sobre preço/serviço
+
+### Taxa de no-show
+
+Clientes que agendaram mas não apareceram:
+
+**O que significa:**
+- Abaixo de 5% = Normal
+- 5-10% = Considere lembretes mais frequentes
+- Acima de 10% = Implemente política de no-show
+
+## Filtros de período
+
+Analise diferentes períodos:
+- **Últimos 7 dias**
+- **Últimos 30 dias**
+- **Este mês**
+- **Mês passado**
+- **Último trimestre**
+- **Este ano**
+- **Personalizado**
+
+## Gráficos
+
+### Evolução temporal
+
+Gráfico de linha mostrando tendência ao longo do tempo:
+- Identifique crescimento ou queda
+- Detecte sazonalidade (ex: menos agendamentos em dezembro)
+- Veja impacto de ações (promoções, mudanças)
+
+### Distribuição
+
+Gráficos de pizza ou barras para:
+- Divisão por serviço
+- Divisão por dia da semana
+- Divisão por horário
+
+## Relatórios avançados (Grow)
+
+No plano Grow, você tem acesso a:
+
+### Relatório de clientes
+
+- Clientes novos vs. recorrentes
+- Frequência média de retorno
+- Clientes mais frequentes
+
+### Relatório de receita
+
+- Faturamento por serviço
+- Faturamento por período
+- Projeção baseada em tendência
+
+### Relatório operacional
+
+- Tempo médio de atendimento
+- Taxa de remarcação
+- Horários ociosos
+
+### Exportação
+
+Exporte qualquer relatório em:
+- **PDF** — Para apresentações
+- **CSV** — Para análise em Excel
+- **Email** — Receba periodicamente
+
+## Usando métricas para crescer
+
+### Identifique padrões
+
+Analise os dados para responder:
+- Quais dias são mais fortes?
+- Qual horário tem mais demanda?
+- Qual serviço gera mais receita?
+
+### Tome decisões
+
+Use os dados para:
+- Ajustar horários de funcionamento
+- Criar promoções direcionadas
+- Decidir onde investir em divulgação
+
+### Acompanhe resultados
+
+Após fazer mudanças:
+1. Espere algumas semanas
+2. Compare métricas antes e depois
+3. Ajuste conforme necessário
+
+## Problemas comuns
+
+### As métricas parecem erradas
+
+1. Verifique o período selecionado
+2. Considere que dados recentes podem não ter sido processados
+3. Agendamentos manuais podem não estar contabilizados corretamente
+
+### Não vejo todas as métricas
+
+Algumas métricas são exclusivas de planos superiores. Verifique sua assinatura em **Conta → Assinatura**.
+
+### Quero uma métrica específica que não existe
+
+Entre em contato pelo suporte sugerindo novas métricas. Estamos sempre melhorando!
+
+### Os dados não atualizam
+
+As métricas são calculadas periodicamente (geralmente a cada hora). Se precisar de dados em tempo real, use a Agenda diretamente.
+
+## Próxima etapa
+
+<div class="not-prose mt-6">
+  <a href="/support/negocio" class="inline-flex items-center gap-2 text-emerald-600 font-medium hover:text-emerald-700">
+    Continuar para: Gerenciando seu Negócio
+    <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+    </svg>
+  </a>
+</div>

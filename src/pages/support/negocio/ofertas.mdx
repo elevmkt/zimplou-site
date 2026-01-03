@@ -1,0 +1,578 @@
+---
+layout: ../../../layouts/DocsLayout.astro
+title: Ofertas, serviços e espaços
+description: Gerencie os serviços que você oferece, preços, duração e recursos disponíveis.
+---
+
+A aba de ofertas é onde você configura tudo relacionado aos serviços que oferece: o que você faz, quanto custa, quanto tempo leva, e quais recursos (espaços, profissionais, equipamentos) são necessários.
+
+## Acessando
+
+1. No dashboard, toque em **Negócio**
+2. Toque na aba **Ofertas**
+
+---
+
+## Lista de ofertas
+
+Você vê todos os serviços cadastrados:
+
+```
+┌────────────────────────────────┐
+│ Corte masculino                │
+│ 30 min • R$ 50,00             │
+├────────────────────────────────┤
+│ Corte feminino                 │
+│ 45 min • R$ 80,00             │
+├────────────────────────────────┤
+│ Escova                         │
+│ 45 min • R$ 60,00             │
+└────────────────────────────────┘
+```
+
+## Adicionando uma nova oferta
+
+1. Toque em **+ Nova oferta** ou no ícone **+**
+2. Preencha os campos:
+
+### Campos obrigatórios
+
+<div class="not-prose my-4 overflow-x-auto">
+  <table class="w-full text-sm border border-slate-200 rounded-lg">
+    <thead class="bg-slate-50">
+      <tr>
+        <th class="text-left px-4 py-2 font-medium text-slate-900 border-b border-slate-200">Campo</th>
+        <th class="text-left px-4 py-2 font-medium text-slate-900 border-b border-slate-200">Descrição</th>
+        <th class="text-left px-4 py-2 font-medium text-slate-900 border-b border-slate-200">Exemplo</th>
+      </tr>
+    </thead>
+    <tbody class="text-slate-600">
+      <tr class="border-b border-slate-100">
+        <td class="px-4 py-2 font-medium">Nome</td>
+        <td class="px-4 py-2">Nome do serviço</td>
+        <td class="px-4 py-2">Corte feminino</td>
+      </tr>
+      <tr>
+        <td class="px-4 py-2 font-medium">Duração</td>
+        <td class="px-4 py-2">Tempo do atendimento</td>
+        <td class="px-4 py-2">45 minutos</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+### Campos opcionais
+
+<div class="not-prose my-4 overflow-x-auto">
+  <table class="w-full text-sm border border-slate-200 rounded-lg">
+    <thead class="bg-slate-50">
+      <tr>
+        <th class="text-left px-4 py-2 font-medium text-slate-900 border-b border-slate-200">Campo</th>
+        <th class="text-left px-4 py-2 font-medium text-slate-900 border-b border-slate-200">Descrição</th>
+        <th class="text-left px-4 py-2 font-medium text-slate-900 border-b border-slate-200">Exemplo</th>
+      </tr>
+    </thead>
+    <tbody class="text-slate-600">
+      <tr class="border-b border-slate-100">
+        <td class="px-4 py-2 font-medium">Preço</td>
+        <td class="px-4 py-2">Valor cobrado</td>
+        <td class="px-4 py-2">R$ 80,00</td>
+      </tr>
+      <tr class="border-b border-slate-100">
+        <td class="px-4 py-2 font-medium">Descrição</td>
+        <td class="px-4 py-2">Detalhes do serviço</td>
+        <td class="px-4 py-2">Inclui lavagem e finalização</td>
+      </tr>
+      <tr>
+        <td class="px-4 py-2 font-medium">Categoria</td>
+        <td class="px-4 py-2">Agrupamento</td>
+        <td class="px-4 py-2">Cabelo, Unha, Barba</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+3. Toque em **Salvar**
+
+## Editando uma oferta
+
+1. Toque na oferta que deseja editar
+2. Altere os campos necessários
+3. Toque em **Salvar**
+
+## Excluindo uma oferta
+
+1. Toque na oferta
+2. Role até o final
+3. Toque em **Excluir** ou ícone de lixeira
+4. Confirme a exclusão
+
+> **Atenção:** Excluir uma oferta não afeta agendamentos já feitos. Mas clientes não poderão mais agendar esse serviço.
+
+---
+
+## Configurações avançadas de ofertas
+
+### Preço variável
+
+Se o preço depende do caso (ex: coloração depende do cabelo):
+
+**Opção 1:** Deixe o preço em branco
+- A IA dirá "Consulte valores" ou "A partir de R$ X"
+
+**Opção 2:** Crie variações
+- Coloração cabelo curto - R$ 150
+- Coloração cabelo médio - R$ 200
+- Coloração cabelo longo - R$ 280
+
+### Duração variável
+
+Se a duração varia:
+
+**Opção 1:** Use a duração máxima
+- Garante tempo suficiente
+- Evita encaixes apertados
+
+**Opção 2:** Use a duração média
+- Mais eficiente
+- Pode precisar de ajustes manuais
+
+**Opção 3:** Crie variações
+- Corte simples (30 min)
+- Corte elaborado (60 min)
+
+### Buffer entre atendimentos
+
+Se você precisa de tempo entre clientes:
+1. Inclua o tempo de preparo na duração
+2. Exemplo: Corte de 30 min + 15 min preparo = cadastre 45 min
+
+Ou configure em **Informações → Intervalo entre agendamentos**.
+
+---
+
+## Organizando ofertas
+
+### Categorias
+
+Agrupe serviços por categoria:
+- **Cabelo:** Corte, Escova, Coloração
+- **Unha:** Manicure, Pedicure
+- **Barba:** Barba simples, Barba completa
+
+Para criar categorias:
+1. Em cada oferta, preencha o campo "Categoria"
+2. Ofertas com mesma categoria ficam agrupadas
+
+### Ordem de exibição
+
+Para mudar a ordem:
+1. Toque e segure em uma oferta
+2. Arraste para a posição desejada
+3. A nova ordem é salva automaticamente
+
+### Ofertas ativas/inativas
+
+Para pausar uma oferta sem excluir:
+1. Toque na oferta
+2. Desative o toggle **Ativo**
+3. Salve
+
+A oferta não aparecerá para clientes, mas você mantém o histórico.
+
+---
+
+## Espaços e recursos
+
+Recursos são os elementos que afetam a disponibilidade do seu negócio: espaços físicos, profissionais da equipe e equipamentos compartilhados.
+
+### Quando usar recursos
+
+Use recursos quando:
+- Você tem **múltiplas salas ou cadeiras**
+- Tem **outros profissionais** trabalhando
+- Tem **equipamentos** que precisam ser reservados
+- A disponibilidade depende de **mais de um fator**
+
+**Se você trabalha sozinho em um único espaço**, provavelmente não precisa configurar recursos.
+
+### Tipos de recursos
+
+**Espaços** - Locais físicos onde o atendimento acontece:
+- Salas, Cadeiras, Mesas, Consultórios, Quadras
+
+**Exemplo para salão:**
+```
+- Cadeira 1
+- Cadeira 2
+- Cadeira 3
+- Sala de depilação
+```
+
+**Pessoas** - Profissionais que realizam atendimentos:
+- Você, Funcionários, Parceiros
+
+**Exemplo para salão:**
+```
+- Maria (cabeleireira)
+- João (barbeiro)
+- Ana (manicure)
+```
+
+**Equipamentos** - Itens compartilhados entre atendimentos:
+- Máquinas, Aparelhos, Kits especiais
+
+**Exemplo para clínica:**
+```
+- Aparelho de laser
+- Ultrassom
+- Kit de massagem
+```
+
+### Adicionando recursos
+
+1. Na aba Ofertas, acesse a seção de **Espaços** ou **Recursos**
+2. Toque em **+ Novo recurso**
+3. Selecione o tipo (Espaço, Pessoa, Equipamento)
+4. Preencha:
+
+<div class="not-prose my-4 overflow-x-auto">
+  <table class="w-full text-sm border border-slate-200 rounded-lg">
+    <thead class="bg-slate-50">
+      <tr>
+        <th class="text-left px-4 py-2 font-medium text-slate-900 border-b border-slate-200">Campo</th>
+        <th class="text-left px-4 py-2 font-medium text-slate-900 border-b border-slate-200">Descrição</th>
+      </tr>
+    </thead>
+    <tbody class="text-slate-600">
+      <tr class="border-b border-slate-100">
+        <td class="px-4 py-2 font-medium">Nome</td>
+        <td class="px-4 py-2">Como identificar (ex: "Cadeira 1")</td>
+      </tr>
+      <tr class="border-b border-slate-100">
+        <td class="px-4 py-2 font-medium">Descrição</td>
+        <td class="px-4 py-2">Detalhes opcionais</td>
+      </tr>
+      <tr>
+        <td class="px-4 py-2 font-medium">Horários</td>
+        <td class="px-4 py-2">Se diferente do padrão do negócio</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+5. Toque em **Salvar**
+
+### Configurando horários por recurso
+
+Se um recurso tem disponibilidade diferente:
+
+1. Na edição do recurso, ative **Horários personalizados**
+2. Configure os dias e horários específicos
+3. Salve
+
+**Exemplo:**
+```
+João (barbeiro):
+- Segunda a Sexta: 10:00 - 19:00
+- Sábado: Não trabalha
+
+Maria (cabeleireira):
+- Segunda a Sexta: 08:00 - 17:00
+- Sábado: 08:00 - 14:00
+```
+
+### Vinculando recursos a ofertas
+
+Para que um serviço use um recurso específico:
+
+1. Edite a oferta
+2. Em **Recursos necessários**, selecione o recurso
+3. Salve
+
+**Exemplo:**
+```
+Corte masculino
+- Precisa de: João ou Pedro (barbeiros)
+- Precisa de: Cadeira de barbeiro
+
+Coloração
+- Precisa de: Maria ou Ana (coloristas)
+- Precisa de: Lavatório
+```
+
+### Como funciona a disponibilidade
+
+Quando um cliente quer agendar:
+
+1. O sistema verifica os horários do negócio
+2. Verifica quais recursos estão livres
+3. Só oferece horários onde **todos os recursos necessários** estão disponíveis
+
+**Exemplo:**
+- Cliente quer corte às 10h
+- João está ocupado às 10h
+- Pedro está livre às 10h
+- Sistema oferece o horário com Pedro
+
+---
+
+## Gerenciando a equipe
+
+### Profissional tem agenda própria
+
+Se cada profissional tem sua base de clientes:
+1. Crie um recurso para cada profissional
+2. Vincule serviços aos profissionais que os fazem
+3. Clientes são direcionados ao profissional disponível
+
+### Cliente quer profissional específico
+
+Atualmente, o agendamento automático não permite escolher profissional. Alternativas:
+
+1. **Agendamento manual:** Você agenda pelo dashboard
+2. **Instruções na IA:** Configure para perguntar preferência
+3. **Ofertas separadas:** "Corte com Maria", "Corte com João"
+
+### Profissional está de férias
+
+1. Edite o recurso (profissional)
+2. Em **Exceções**, bloqueie o período de férias
+3. Os serviços vinculados a ele não terão disponibilidade nesse período
+
+---
+
+## Gerenciando espaços
+
+### Múltiplas salas idênticas
+
+Se você tem salas iguais (ex: 3 consultórios):
+1. Crie um recurso para cada sala
+2. Vincule serviços a "qualquer sala"
+3. O sistema aloca automaticamente
+
+### Sala com equipamento específico
+
+Se uma sala tem equipamento exclusivo:
+1. Crie a sala como recurso
+2. Não precisa criar o equipamento separado
+3. Vincule serviços que usam esse equipamento à sala
+
+### Espaço compartilhado
+
+Se um espaço é usado por vários serviços:
+1. Crie o espaço como recurso
+2. Vincule a todos os serviços que o usam
+3. O sistema evita conflitos automaticamente
+
+---
+
+## Como a IA usa as ofertas
+
+A IA acessa as informações das ofertas para:
+
+### Responder sobre serviços
+```
+Cliente: "Vocês fazem escova?"
+IA: "Sim! Fazemos escova por R$ 60,00.
+     O serviço dura cerca de 45 minutos.
+     Gostaria de agendar?"
+```
+
+### Informar preços
+```
+Cliente: "Quanto custa corte feminino?"
+IA: "O corte feminino custa R$ 80,00 e
+     inclui lavagem e finalização."
+```
+
+### Mostrar disponibilidade
+```
+Cliente: "Tem horário para coloração amanhã?"
+IA: "Para coloração (2 horas) amanhã tenho
+     às 9h e às 14h. Qual prefere?"
+```
+
+---
+
+## Boas práticas
+
+### Nomes claros
+
+Use nomes que os clientes entendem:
+- "Corte masculino" (não "Corte M")
+- "Limpeza de pele completa" (não "LP completa")
+
+### Descrições úteis
+
+Inclua informações que clientes perguntam:
+- O que inclui
+- Para quem é indicado
+- Resultados esperados
+
+**Exemplo:**
+```
+Corte feminino com lavagem, corte personalizado
+e finalização com secador. Indicado para todos
+os tipos de cabelo. Duração: 45 min.
+```
+
+### Preços atualizados
+
+Mantenha os preços sempre atualizados:
+- A IA informa o preço cadastrado
+- Preço errado causa frustração
+- Revise mensalmente
+
+### Não exagere nas variações
+
+Muitas opções confundem:
+- 3-5 variações por serviço (bom)
+- 15 variações de coloração (ruim)
+
+---
+
+## Exemplos por tipo de negócio
+
+### Salão com 3 profissionais
+
+```
+Recursos:
+- Maria (cabeleireira) - Seg-Sex 9-18
+- João (barbeiro) - Seg-Sáb 10-19
+- Ana (manicure) - Seg-Sex 9-18
+
+Ofertas:
+- Corte feminino → Maria
+- Corte masculino → João
+- Barba → João
+- Manicure → Ana
+```
+
+### Clínica com 2 consultórios
+
+```
+Recursos:
+- Consultório 1
+- Consultório 2
+- Dr. Silva - Seg/Qua/Sex
+- Dra. Costa - Ter/Qui/Sáb
+
+Ofertas:
+- Consulta Dr. Silva → Dr. Silva + Consultório 1 ou 2
+- Consulta Dra. Costa → Dra. Costa + Consultório 1 ou 2
+```
+
+### Estúdio de pilates com equipamentos
+
+```
+Recursos:
+- Reformer 1
+- Reformer 2
+- Cadeira
+- Professora Julia - Seg-Sex
+- Professor Marcos - Seg-Sáb
+
+Ofertas:
+- Aula de Reformer → Reformer 1 ou 2 + Julia ou Marcos
+- Aula de Cadeira → Cadeira + Julia ou Marcos
+```
+
+---
+
+## Problemas comuns
+
+### A IA diz que não tenho um serviço
+
+1. Verifique se o serviço está cadastrado
+2. Verifique se está **ativo**
+3. Verifique se o nome está correto
+4. Salve novamente e teste
+
+### O preço mostrado está errado
+
+1. Edite a oferta
+2. Corrija o preço
+3. Salve
+4. Teste no preview da IA
+
+### Cliente não consegue agendar um serviço
+
+Pode ser porque:
+- O serviço está inativo
+- Não há horários disponíveis com a duração necessária
+- Recursos necessários estão ocupados
+
+Verifique cada possibilidade.
+
+### Não aparece disponibilidade
+
+Verifique:
+1. Os recursos vinculados ao serviço estão ativos?
+2. Os horários dos recursos estão configurados?
+3. Nenhum bloqueio está ativo?
+4. Há pelo menos um recurso de cada tipo disponível?
+
+### Cliente foi agendado com profissional errado
+
+Se você usa vários profissionais:
+1. Verifique como o serviço está vinculado
+2. Se não vinculou a profissional específico, o sistema escolhe qualquer um disponível
+3. Para garantir profissional específico, use ofertas separadas
+
+### Dois clientes no mesmo horário
+
+Isso acontece se:
+- Você tem múltiplos recursos (2 cadeiras = 2 clientes simultâneos)
+- É o comportamento esperado
+
+Se você não quer atendimentos simultâneos:
+- Configure apenas 1 recurso de cada tipo
+- Ou não use recursos
+
+### Quero mostrar "a partir de" no preço
+
+Atualmente não há campo específico. Alternativas:
+- Deixe o preço vazio e mencione na descrição
+- Cadastre o menor valor
+- Use instruções da IA para dizer "a partir de"
+
+### Como fazer pacotes/combos?
+
+Crie como uma oferta única:
+- Nome: "Combo Corte + Barba"
+- Duração: soma das durações
+- Preço: valor do combo
+
+### Serviço precisa de avaliação prévia
+
+Na descrição, inclua:
+```
+Primeira sessão é avaliação gratuita.
+Valores definidos após avaliação.
+```
+
+E configure nas instruções da IA para mencionar isso.
+
+### Como remover um recurso
+
+1. Na seção de recursos
+2. Toque no recurso
+3. Role até o final
+4. Toque em **Excluir**
+5. Confirme
+
+> **Atenção:** Excluir um recurso pode afetar serviços vinculados a ele.
+
+---
+
+## Próxima etapa
+
+<div class="not-prose mt-6">
+  <a href="/support/ia" class="inline-flex items-center gap-2 text-emerald-600 font-medium hover:text-emerald-700">
+    Continuar para: Configurando a IA
+    <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+    </svg>
+  </a>
+</div>

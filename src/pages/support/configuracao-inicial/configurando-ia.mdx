@@ -1,0 +1,147 @@
+---
+layout: ../../../layouts/DocsLayout.astro
+title: Configurando a IA
+description: Personalize como sua IA se comunica com os clientes.
+---
+
+Na quarta etapa, você define a personalidade da sua IA. Isso determina como ela vai conversar com seus clientes no WhatsApp.
+
+## Os controles de personalidade
+
+Você vai ajustar três aspectos principais usando controles deslizantes:
+
+### 1. Formalidade
+
+Define o tom da comunicação:
+
+| Nível | Como a IA fala | Exemplo |
+|-------|----------------|---------|
+| **Casual** | Descontraído, usa gírias leves | "Oi! Tudo bem? Bora marcar um horário?" |
+| **Neutro** | Equilibrado, profissional mas amigável | "Olá! Como posso ajudar você hoje?" |
+| **Formal** | Profissional, linguagem mais elaborada | "Bom dia. Em que posso ser útil?" |
+
+**Dica:** Para a maioria dos negócios, o nível **Neutro** funciona bem.
+
+### 2. Detalhamento
+
+Define quanto a IA explica:
+
+| Nível | Como a IA responde | Quando usar |
+|-------|-------------------|-------------|
+| **Direto** | Respostas curtas e objetivas | Alto volume de mensagens |
+| **Equilibrado** | Informação suficiente sem exagero | Maioria dos casos |
+| **Detalhado** | Explicações completas | Serviços complexos |
+
+**Exemplo - "Quanto custa um corte?":**
+- **Direto:** "R$ 80,00"
+- **Equilibrado:** "O corte feminino custa R$ 80,00 e inclui lavagem e finalização."
+- **Detalhado:** "O corte feminino custa R$ 80,00. O serviço inclui lavagem com produtos profissionais, corte personalizado e finalização com secador. Duração aproximada de 45 minutos. Gostaria de agendar?"
+
+### 3. Proatividade
+
+Define se a IA toma iniciativa:
+
+| Nível | Comportamento | Exemplo |
+|-------|---------------|---------|
+| **Reativo** | Só responde o que perguntam | Responde a pergunta e para |
+| **Moderado** | Sugere próximos passos | Responde e pergunta "Quer agendar?" |
+| **Proativo** | Oferece informações adicionais | Responde, sugere horários, oferece promoções |
+
+## Instruções personalizadas (opcional)
+
+Além dos controles, você pode adicionar instruções específicas em texto:
+
+### Exemplos de instruções úteis
+
+**Para um salão de beleza:**
+```
+- Sempre pergunte se é a primeira vez do cliente
+- Mencione que temos estacionamento gratuito
+- Se perguntarem sobre coloração, sugira uma avaliação primeiro
+```
+
+**Para uma clínica:**
+```
+- Peça que o cliente traga documento e carteirinha do plano
+- Informe que a primeira consulta é mais longa
+- Não marque retornos com menos de 7 dias de intervalo
+```
+
+**Para um personal trainer:**
+```
+- Pergunte o objetivo do cliente (emagrecer, ganhar massa, etc.)
+- Mencione que a primeira aula é uma avaliação
+- Ofereça pacotes mensais após a primeira aula
+```
+
+### O que NÃO colocar nas instruções
+
+- ❌ Informações que mudam frequentemente (preços específicos)
+- ❌ Promoções temporárias (melhor atualizar nas ofertas)
+- ❌ Instruções contraditórias
+
+## Visualização em tempo real
+
+Enquanto você ajusta os controles, veja uma prévia de como a IA responde. Isso ajuda a encontrar o equilíbrio certo.
+
+## Problemas comuns
+
+### A IA está muito formal/informal
+
+Ajuste o controle de **Formalidade**:
+- Mova para a esquerda para mais casual
+- Mova para a direita para mais formal
+
+Você pode ajustar isso a qualquer momento em **IA → Personalidade** no dashboard.
+
+### A IA fala demais/pouco
+
+Ajuste o controle de **Detalhamento**:
+- Mova para a esquerda para respostas mais curtas
+- Mova para a direita para respostas mais completas
+
+### A IA não está oferecendo agendamento
+
+Aumente o nível de **Proatividade**. No nível mais baixo, a IA só responde perguntas diretas sem sugerir ações.
+
+### Minhas instruções não estão funcionando
+
+Verifique se:
+1. As instruções estão claras e específicas
+2. Não há contradições entre elas
+3. Você salvou após escrever
+
+Se ainda não funcionar, tente reformular de forma mais direta.
+
+## Configurações recomendadas por tipo de negócio
+
+### Salão de beleza / Barbearia
+- Formalidade: **Casual a Neutro**
+- Detalhamento: **Equilibrado**
+- Proatividade: **Moderado a Proativo**
+
+### Clínica / Consultório
+- Formalidade: **Neutro a Formal**
+- Detalhamento: **Equilibrado a Detalhado**
+- Proatividade: **Moderado**
+
+### Personal / Academia
+- Formalidade: **Casual a Neutro**
+- Detalhamento: **Equilibrado**
+- Proatividade: **Proativo**
+
+### Serviços profissionais (advogado, contador)
+- Formalidade: **Formal**
+- Detalhamento: **Detalhado**
+- Proatividade: **Moderado**
+
+## Próxima etapa
+
+<div class="not-prose mt-6">
+  <a href="/support/configuracao-inicial/testando-ia" class="inline-flex items-center gap-2 text-emerald-600 font-medium hover:text-emerald-700">
+    Continuar para: Testando a IA
+    <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+    </svg>
+  </a>
+</div>

@@ -1,0 +1,245 @@
+---
+layout: ../../../layouts/DocsLayout.astro
+title: Problemas com Pagamentos
+description: Soluções para problemas de cobrança, Stripe e transferências.
+---
+
+Este guia ajuda a resolver problemas relacionados a pagamentos, seja cobrança da sua assinatura ou recebimentos via Stripe Connect.
+
+## Problemas com sua assinatura
+
+### Cobrança falhou
+
+Se o pagamento da sua assinatura falhou:
+
+1. **Verifique o cartão:**
+   - Cartão vencido?
+   - Limite disponível?
+   - Cartão bloqueado?
+
+2. **Atualize a forma de pagamento:**
+   - Vá em **Conta → Assinatura → Forma de pagamento**
+   - Adicione novo cartão ou corrija dados
+   - Salve
+
+3. **Aguarde nova tentativa:**
+   - O sistema tenta novamente automaticamente
+   - Ou toque em "Tentar novamente"
+
+### Cobrança duplicada
+
+Se foi cobrado duas vezes:
+1. Verifique o histórico em **Conta → Assinatura → Histórico**
+2. Compare com seu extrato bancário
+3. Se confirmado, contate suporte para reembolso
+
+### Não recebi nota fiscal/recibo
+
+1. Vá em **Conta → Assinatura → Histórico**
+2. Toque no pagamento
+3. Toque em **Baixar recibo**
+4. Verifique também seu email (pode ter sido enviado)
+
+### Quero mudar cartão
+
+1. Vá em **Conta → Assinatura → Forma de pagamento**
+2. Adicione novo cartão
+3. O novo cartão será usado nas próximas cobranças
+4. Pode remover o antigo depois
+
+### Quero cancelar e parar cobranças
+
+1. Vá em **Conta → Assinatura → Cancelar**
+2. Confirme o cancelamento
+3. Você tem acesso até o fim do período pago
+4. Não haverá mais cobranças
+
+## Problemas com Stripe Connect
+
+### Não recebi o dinheiro do cliente
+
+**Verifique o prazo:**
+- Stripe transfere em D+2 (dois dias úteis)
+- Pagamento sexta → Recebe terça
+- Feriados bancários podem atrasar
+
+**Verifique o status no Stripe:**
+1. Acesse dashboard.stripe.com
+2. Vá em Pagamentos
+3. Verifique o status do pagamento
+
+**Verifique a conta bancária:**
+1. Os dados bancários estão corretos?
+2. A conta está ativa?
+3. Verifique no Stripe se há erro na transferência
+
+### Stripe pede mais informações
+
+Se o status é "Ação necessária":
+1. Acesse dashboard.stripe.com diretamente
+2. Veja o que está pendente
+3. Complete as informações solicitadas
+4. Aguarde verificação
+
+Informações comuns solicitadas:
+- Documento de identidade
+- Comprovante de endereço
+- Informações do negócio
+- Dados bancários
+
+### Minha conta Stripe foi restrita
+
+Conta restrita pode significar:
+- Informações pendentes
+- Atividade suspeita detectada
+- Verificação não concluída
+
+**O que fazer:**
+1. Acesse dashboard.stripe.com
+2. Veja os alertas e notificações
+3. Complete o que for pedido
+4. Se não resolver, contate suporte do Stripe
+
+### Cliente diz que pagou mas não aparece
+
+1. Verifique se o pagamento foi pelo Zimplou
+   - Pix direto ou dinheiro não aparecem
+   - Só aparecem pagamentos processados pelo Stripe
+
+2. Aguarde processamento
+   - Pode haver delay de alguns minutos
+   - Verifique novamente em 10-15 minutos
+
+3. Verifique no Stripe
+   - Acesse dashboard.stripe.com
+   - Veja pagamentos recentes
+
+### Taxa do Stripe está alta
+
+As taxas são definidas pelo Stripe:
+- Cartão de crédito: ~3,99% + R$ 0,39
+- Cartão de débito: ~2,99% + R$ 0,39
+
+Não é possível alterar as taxas pelo Zimplou. Consulte stripe.com para mais informações.
+
+### Cliente pediu reembolso
+
+Para fazer reembolso:
+1. Vá em **Dashboard → Finanças**
+2. Encontre a transação
+3. Toque em **Reembolsar**
+4. Escolha valor total ou parcial
+5. Confirme
+
+Ou pelo Stripe:
+1. Acesse dashboard.stripe.com
+2. Encontre o pagamento
+3. Clique em Reembolsar
+
+### Cliente contestou cobrança (chargeback)
+
+Se um cliente contestou no banco:
+1. Você receberá email do Stripe
+2. Acesse dashboard.stripe.com → Disputas
+3. Envie evidências (comprovante do serviço, conversas)
+4. Aguarde decisão do banco
+
+**Dicas para evitar chargebacks:**
+- Mantenha comunicação clara com clientes
+- Tenha política de cancelamento explícita
+- Guarde comprovantes de serviços prestados
+
+## Problemas de conexão com Stripe
+
+### Não consigo conectar o Stripe
+
+1. Verifique sua conexão
+   - Internet estável?
+   - Tente novamente
+
+2. Problema no Stripe
+   - O Stripe pode estar com instabilidade
+   - Tente mais tarde
+
+### Stripe desconectou
+
+Se o Stripe aparece como desconectado:
+1. Vá em **Conta → Integrações**
+2. Toque em **Reconectar** no Stripe
+3. Faça login na sua conta Stripe
+4. Autorize novamente
+
+### Não aparecem os pagamentos
+
+Se a seção Finanças não mostra pagamentos:
+1. Verifique se o Stripe está conectado
+2. Verifique se você recebeu pagamentos (pode não ter nenhum ainda)
+3. Atualize a página
+4. Verifique o período selecionado
+
+## Problemas com dados bancários
+
+### Transferência falhou
+
+Se a transferência para sua conta falhou:
+1. Verifique os dados bancários no Stripe
+2. Corrija se houver erro
+3. A próxima transferência usará os dados corretos
+4. Valores não transferidos ficam retidos e vão na próxima
+
+### Quero mudar conta bancária
+
+1. Acesse dashboard.stripe.com
+2. Vá em Configurações → Pagamentos
+3. Atualize os dados bancários
+4. Próximas transferências vão para a nova conta
+
+### Conta bancária foi rejeitada
+
+Possíveis causas:
+- Dados incorretos
+- Conta em nome diferente
+- Tipo de conta não aceito
+
+**Solução:**
+1. Verifique se digitou corretamente
+2. Use uma conta no seu nome ou da empresa
+3. Tente outra conta se necessário
+
+## Preços e moedas
+
+### Preço aparece na moeda errada
+
+1. Verifique o endereço do negócio
+   - A moeda é baseada no país
+2. Se precisa de outra moeda, contate suporte
+
+### Cliente foi cobrado valor diferente
+
+Verifique:
+1. O preço do serviço em **Negócio → Ofertas**
+2. Se houve desconto aplicado
+3. Se o cliente agendou serviço diferente
+
+Se o valor está errado, corrija em Ofertas.
+
+## Relatórios financeiros
+
+### Preciso de relatório para contador
+
+1. Vá em **Dashboard → Finanças**
+2. Selecione o período
+3. Exporte em CSV ou PDF
+4. Envie para seu contador
+
+Ou no Stripe:
+1. Acesse dashboard.stripe.com
+2. Relatórios → Exportar
+3. Selecione período e formato
+
+### Os números não batem
+
+Lembre-se:
+- Valor bruto ≠ Valor líquido (taxas são descontadas)
+- Transferências têm prazo D+2
+- Reembolsos aparecem como negativos

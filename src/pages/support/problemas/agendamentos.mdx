@@ -1,0 +1,264 @@
+---
+layout: ../../../layouts/DocsLayout.astro
+title: Problemas com Agendamentos
+description: Soluções para problemas de horários, conflitos e cancelamentos.
+---
+
+Este guia ajuda a resolver problemas relacionados a agendamentos, horários e disponibilidade.
+
+## Clientes não conseguem agendar
+
+### Não há horários disponíveis
+
+**Verifique a agenda:**
+1. Vá na **Agenda** e veja o calendário
+2. Procure por horários livres
+3. Se tudo está ocupado, não há disponibilidade
+
+**Verifique bloqueios:**
+1. Há dias ou horários bloqueados?
+2. Remova bloqueios desnecessários
+
+**Verifique Google Agenda:**
+Se conectado, eventos do Google bloqueiam horários:
+1. Veja o Google Agenda
+2. Remova eventos que não deveriam bloquear
+
+### Horários não configurados
+
+1. Vá em **Negócio → Horários**
+2. Confirme que os dias estão selecionados
+3. Confirme os horários de início e fim
+4. Salve as alterações
+
+### Serviços inativos
+
+1. Vá em **Negócio → Ofertas**
+2. Verifique se os serviços estão **ativos**
+3. Ative os que precisam estar disponíveis
+
+### Duração vs. Disponibilidade
+
+Se um serviço dura 2 horas mas você só tem slots de 1 hora livre, não cabe:
+1. Verifique a duração do serviço
+2. Verifique a disponibilidade contínua
+3. Crie slots maiores se necessário
+
+### Recursos indisponíveis
+
+Se você usa recursos:
+1. Vá em **Negócio → Recursos**
+2. Verifique se os recursos necessários estão disponíveis
+3. Um recurso bloqueado impede agendamentos
+
+## Conflito de horários
+
+### Dois clientes no mesmo horário
+
+Isso pode acontecer se:
+
+**Você tem múltiplos recursos:**
+- 2 cadeiras = 2 clientes simultâneos
+- É o comportamento esperado
+
+**Houve delay na sincronização:**
+- Cliente agendou no exato momento que outro agendava
+- Raro, mas pode acontecer
+
+**Solução:**
+1. Identifique qual agendamento veio primeiro
+2. Contate o segundo cliente para remarcar
+3. Considere adicionar intervalo entre agendamentos
+
+### Cliente agendou horário bloqueado
+
+Possíveis causas:
+1. Bloqueio foi feito depois do agendamento
+2. Delay na sincronização com Google Agenda
+3. Bloqueio não foi salvo corretamente
+
+**Solução:**
+- Contate o cliente para remarcar
+- Verifique se o bloqueio está salvo
+
+## Agendamento não aparece
+
+### Na agenda do Zimplou
+
+1. Verifique a data — Pode estar em outro dia
+2. Verifique filtros — Pode estar filtrado
+3. Puxe para baixo para atualizar
+4. Se veio do WhatsApp, aguarde alguns segundos
+
+### No Google Agenda
+
+1. Verifique se o Google está conectado
+2. Verifique se está olhando o calendário certo
+3. Aguarde sincronização (pode levar minutos)
+4. Verifique se o agendamento foi confirmado
+
+## Cliente cancelou mas horário não liberou
+
+1. Verifique o status do agendamento
+2. Se ainda está "Cancelado", o horário pode não ter liberado
+3. Tente excluir o agendamento completamente
+4. Atualize a página
+
+## Horários errados
+
+### Fuso horário incorreto
+
+Se horários aparecem errados:
+1. Vá em **Conta → Perfil** ou **Negócio → Informações**
+2. Verifique o fuso horário configurado
+3. Corrija para seu fuso real (ex: America/Sao_Paulo)
+
+### Horário de verão
+
+O sistema considera horário de verão automaticamente. Se estiver errado:
+1. Verifique o fuso horário
+2. Atualize o app para versão mais recente
+
+## Problemas com lembretes
+
+### Cliente não recebeu lembrete
+
+Verifique:
+1. Lembretes estão ativados?
+2. WhatsApp está conectado?
+3. Número do cliente está correto?
+
+### Lembrete foi em horário errado
+
+Verifique a configuração de lembretes:
+1. Quanto tempo antes o lembrete é enviado
+2. Fuso horário está correto
+
+## Problemas ao remarcar
+
+### Não consigo mudar o horário
+
+1. Agendamentos passados não podem ser editados
+2. Verifique se o novo horário está disponível
+3. Tente cancelar e criar novo agendamento
+
+### Cliente não foi notificado da remarcação
+
+1. Verifique se WhatsApp está conectado
+2. Verifique se notificações de remarcação estão ativadas
+3. Avise o cliente manualmente se necessário
+
+## Cancelamentos
+
+### Como cancelar um agendamento
+
+1. Toque no agendamento
+2. Toque em **Cancelar**
+3. Opcionalmente, informe o motivo
+4. Confirme
+
+### Cliente não consegue cancelar
+
+Se o cliente quer cancelar:
+1. A IA pode processar o cancelamento se configurada
+2. Ou você pode cancelar manualmente
+3. Defina uma política clara de cancelamento
+
+### Cancelamentos frequentes
+
+Se muitos clientes cancelam:
+1. Considere lembretes mais frequentes
+2. Implemente política de no-show
+3. Peça confirmação mais perto do horário
+4. Avalie se há problema com seus serviços
+
+## Agendamento manual
+
+### Quando usar
+
+- Cliente ligou ou veio presencialmente
+- Você quer bloquear horário para alguém
+- Migração de sistema antigo
+
+### Como fazer
+
+1. Toque em **+** na Agenda
+2. Selecione **Novo agendamento**
+3. Preencha: cliente, serviço, data/hora
+4. Salve
+
+### Agendamento manual não aparece
+
+1. Verifique se salvou
+2. Verifique a data
+3. Atualize a tela
+
+## Antecedência de agendamento
+
+### Cliente quer agendar "agora"
+
+Se você configurou antecedência mínima:
+- Ex: 2 horas de antecedência
+- Cliente não consegue agendar para "agora"
+
+**Para permitir agendamentos imediatos:**
+1. Vá em **Negócio → Horários**
+2. Reduza ou remova a antecedência mínima
+3. Salve
+
+### Cliente quer agendar para muito tempo depois
+
+Se você configurou antecedência máxima:
+- Ex: 30 dias máximo
+- Cliente não vê horários além disso
+
+**Para permitir agendamentos mais distantes:**
+1. Vá em **Negócio → Horários**
+2. Aumente a antecedência máxima
+3. Salve
+
+## Intervalos entre agendamentos
+
+### Não há tempo de preparo entre clientes
+
+Configure intervalo:
+1. Vá em **Negócio → Horários**
+2. Defina "Intervalo entre agendamentos" (ex: 15 min)
+3. Salve
+
+### Intervalo muito grande desperdiça horários
+
+Reduza se necessário:
+1. Vá em **Negócio → Horários**
+2. Diminua o intervalo
+3. Salve
+
+## Agendamentos e recursos
+
+### Cliente foi atribuído ao recurso errado
+
+Se você usa recursos (profissionais, salas):
+1. A atribuição é automática baseada em disponibilidade
+2. Para forçar um recurso específico, crie ofertas separadas
+3. Ou faça agendamento manual especificando o recurso
+
+### Recurso não está disponível
+
+1. Verifique os horários do recurso
+2. Verifique se não há bloqueio
+3. Verifique se o recurso está ativo
+
+## Histórico de agendamentos
+
+### Ver agendamentos antigos
+
+1. Na Agenda, navegue para datas passadas
+2. Ou use a busca por nome do cliente
+3. Histórico completo fica disponível
+
+### Exportar agendamentos
+
+Se precisar exportar:
+1. Vá em **Dashboard → Métricas** (se disponível)
+2. Exporte relatório
+3. Ou contate suporte para dados específicos

@@ -1,0 +1,280 @@
+---
+layout: ../../../layouts/DocsLayout.astro
+title: Assinatura
+description: Gerencie seu plano, pagamentos e cobrança.
+---
+
+A assinatura é onde você gerencia seu plano do Zimplou, visualiza pagamentos e faz alterações na cobrança.
+
+## Acessando
+
+1. No dashboard, toque em **Conta**
+2. Toque em **Assinatura**
+
+## Informações da assinatura
+
+### Visão geral
+
+```
+┌────────────────────────────────┐
+│ Plano: Grow                    │
+│ Status: Ativo                  │
+│ Valor: R$ 49,90/mês           │
+│ Próxima cobrança: 15/02/2024   │
+└────────────────────────────────┘
+```
+
+### Status possíveis
+
+| Status | Significado | O que fazer |
+|--------|-------------|-------------|
+| **Ativo** | Tudo funcionando | Nada, aproveite! |
+| **Período de teste** | Nos 10 dias grátis | Adicione forma de pagamento |
+| **Pagamento pendente** | Cobrança falhou | Atualize forma de pagamento |
+| **Cancelado** | Você cancelou | Reativar se quiser voltar |
+| **Pausado** | Temporariamente pausado | Reativar quando quiser |
+
+## Os planos
+
+### Comparativo
+
+<div class="not-prose my-4 overflow-x-auto">
+  <table class="w-full text-sm border border-slate-200 rounded-lg">
+    <thead class="bg-slate-50">
+      <tr>
+        <th class="text-left px-4 py-2 font-medium text-slate-900 border-b border-slate-200">Recurso</th>
+        <th class="text-left px-4 py-2 font-medium text-slate-900 border-b border-slate-200">Zap</th>
+        <th class="text-left px-4 py-2 font-medium text-slate-900 border-b border-slate-200">Grow</th>
+      </tr>
+    </thead>
+    <tbody class="text-slate-600">
+      <tr class="border-b border-slate-100">
+        <td class="px-4 py-2">WhatsApp IA</td>
+        <td class="px-4 py-2">✓</td>
+        <td class="px-4 py-2">✓</td>
+      </tr>
+      <tr class="border-b border-slate-100">
+        <td class="px-4 py-2">Stripe Connect (pagamentos)</td>
+        <td class="px-4 py-2">✓</td>
+        <td class="px-4 py-2">✓</td>
+      </tr>
+      <tr class="border-b border-slate-100">
+        <td class="px-4 py-2">Google Agenda</td>
+        <td class="px-4 py-2">✗</td>
+        <td class="px-4 py-2">✓</td>
+      </tr>
+      <tr class="border-b border-slate-100">
+        <td class="px-4 py-2">Agendamentos automáticos</td>
+        <td class="px-4 py-2">✗</td>
+        <td class="px-4 py-2">✓</td>
+      </tr>
+      <tr class="border-b border-slate-100">
+        <td class="px-4 py-2">Remarketing</td>
+        <td class="px-4 py-2">✗</td>
+        <td class="px-4 py-2">✓</td>
+      </tr>
+      <tr>
+        <td class="px-4 py-2">Analytics</td>
+        <td class="px-4 py-2">✗</td>
+        <td class="px-4 py-2">✓</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+### Preços
+
+Os preços variam por região. Veja os valores atuais em **Assinatura → Ver planos**.
+
+## Período de teste
+
+Todos os planos têm **10 dias grátis**:
+- Acesso completo aos recursos do plano Grow
+- Não precisa de cartão para começar
+- Após 10 dias, escolha seu plano e a cobrança começa
+- Você pode cancelar antes sem custo
+
+### Quando termina o teste
+
+Antes do teste acabar:
+1. Adicione uma forma de pagamento
+2. Ou faça downgrade para plano menor
+3. Ou cancele se não quiser continuar
+
+Se não fizer nada:
+- A cobrança será tentada (se tiver cartão)
+- Ou o acesso será limitado (se não tiver)
+
+## Mudando de plano
+
+### Fazer upgrade
+
+Para mudar para um plano maior:
+
+1. Vá em **Assinatura → Mudar plano**
+2. Selecione o plano desejado
+3. Revise as diferenças
+4. Confirme
+
+**O que acontece:**
+- Acesso imediato aos novos recursos
+- Cobrança proporcional (paga a diferença do mês)
+
+### Fazer downgrade
+
+Para mudar para um plano menor:
+
+1. Vá em **Assinatura → Mudar plano**
+2. Selecione o plano menor
+3. Revise o que você perde
+4. Confirme
+
+**O que acontece:**
+- Mudança no próximo ciclo de cobrança
+- Você mantém os recursos atuais até lá
+
+### Mudança e integrações
+
+Se fizer downgrade e perder acesso a uma integração:
+- A integração é desconectada automaticamente
+- Seus dados são mantidos
+- Se voltar ao plano, pode reconectar
+
+## Formas de pagamento
+
+### Adicionar cartão
+
+1. Vá em **Assinatura → Forma de pagamento**
+2. Toque em **Adicionar cartão**
+3. Preencha os dados do cartão
+4. Confirme
+
+Aceitamos:
+- Visa
+- Mastercard
+- American Express
+- Elo
+
+### Trocar cartão
+
+1. Vá em **Forma de pagamento**
+2. Toque no cartão atual
+3. Selecione **Trocar**
+4. Adicione o novo cartão
+
+### Remover cartão
+
+1. Vá em **Forma de pagamento**
+2. Toque no cartão
+3. Selecione **Remover**
+4. Confirme
+
+> **Nota:** Se você tem assinatura ativa, precisa adicionar outro cartão antes de remover.
+
+### Pix (se disponível)
+
+Em alguns casos, você pode pagar via Pix:
+1. Vá em **Forma de pagamento**
+2. Selecione **Pagar com Pix**
+3. Escaneie o QR code ou copie o código
+4. Pague no seu banco
+5. Aguarde confirmação
+
+## Histórico de pagamentos
+
+Veja todos os pagamentos realizados:
+
+1. Vá em **Assinatura → Histórico**
+2. Veja a lista de cobranças
+
+```
+15/01/2024  Grow - Mensal    R$ 49,90  ✓ Pago
+15/12/2023  Grow - Mensal    R$ 49,90  ✓ Pago
+15/11/2023  Grow - Mensal    R$ 49,90  ✓ Pago
+```
+
+### Baixar recibo
+
+Para cada pagamento, você pode baixar o recibo:
+1. Toque no pagamento
+2. Toque em **Baixar recibo** ou **Nota fiscal**
+3. O PDF é baixado ou enviado por email
+
+## Cancelar assinatura
+
+Se quiser cancelar:
+
+1. Vá em **Assinatura → Cancelar**
+2. Leia o que acontece ao cancelar:
+   - Acesso até o fim do período pago
+   - IA para de responder no WhatsApp
+   - Dados mantidos por 30 dias
+3. Opcionalmente, diga por que está cancelando
+4. Confirme o cancelamento
+
+**Após cancelar:**
+- Você ainda tem acesso até o fim do período pago
+- Pode reativar a qualquer momento
+- Após 30 dias, dados podem ser apagados
+
+### Reativar assinatura
+
+Se cancelou e quer voltar:
+1. Faça login normalmente
+2. Vá em **Assinatura**
+3. Toque em **Reativar**
+4. Escolha o plano
+5. Confirme pagamento
+
+## Problemas comuns
+
+### Meu cartão foi recusado
+
+Possíveis causas:
+1. Limite insuficiente
+2. Cartão vencido
+3. Cartão bloqueado pelo banco
+4. Dados digitados incorretamente
+
+**Solução:**
+1. Verifique os dados do cartão
+2. Tente outro cartão
+3. Entre em contato com o banco
+4. Tente novamente
+
+### Cobrança duplicada
+
+Se você foi cobrado duas vezes:
+1. Verifique o histórico de pagamentos
+2. Compare com o extrato do cartão
+3. Se confirmado, entre em contato com suporte
+4. Você será reembolsado
+
+### Não recebi o recibo
+
+1. Verifique seu email (e spam)
+2. Baixe diretamente do histórico
+3. Se não aparecer, contate suporte
+
+### Quero mudar a data de cobrança
+
+Atualmente não é possível escolher a data. A cobrança acontece no mesmo dia que você assinou.
+
+
+### Cancelei mas ainda está cobrando
+
+Se você cancelou mas ainda vê cobrança:
+1. Verifique a data de cancelamento
+2. Cobranças podem ter sido agendadas antes
+3. Se for erro, contate suporte para reembolso
+
+## Próxima etapa
+
+<div class="not-prose mt-6">
+  <a href="/support/conta/integracoes" class="inline-flex items-center gap-2 text-emerald-600 font-medium hover:text-emerald-700">
+    Continuar para: Integrações
+    <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+    </svg>
+  </a>
+</div>

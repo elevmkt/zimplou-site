@@ -1,0 +1,155 @@
+---
+layout: ../../../layouts/DocsLayout.astro
+title: Gerenciando Integrações
+description: Conecte, desconecte e gerencie suas integrações do Zimplou.
+---
+
+As integrações do Zimplou aparecem como cards dentro da aba **Perfil** nas configurações de conta. Aqui você pode ver o status de todas as conexões, conectar novas integrações e gerenciar as existentes.
+
+## Acessando
+
+1. No dashboard, toque em **Conta**
+2. Na aba **Perfil**, role até a seção **Integrações**
+
+## Visão geral
+
+Você verá cards para cada integração:
+
+```
+┌────────────────────────────────┐
+│ WhatsApp              Conectado │
+│ +55 11 99999-9999               │
+├────────────────────────────────┤
+│ Google Agenda         Conectado │
+│ joao@gmail.com                  │
+├────────────────────────────────┤
+│ Stripe Connect         Pendente │
+│ Ação necessária                 │
+└────────────────────────────────┘
+```
+
+## Integrações disponíveis
+
+<div class="not-prose my-4 overflow-x-auto">
+  <table class="w-full text-sm border border-slate-200 rounded-lg">
+    <thead class="bg-slate-50">
+      <tr>
+        <th class="text-left px-4 py-2 font-medium text-slate-900 border-b border-slate-200">Integração</th>
+        <th class="text-left px-4 py-2 font-medium text-slate-900 border-b border-slate-200">Função</th>
+        <th class="text-left px-4 py-2 font-medium text-slate-900 border-b border-slate-200">Planos</th>
+      </tr>
+    </thead>
+    <tbody class="text-slate-600">
+      <tr class="border-b border-slate-100">
+        <td class="px-4 py-2 font-medium">WhatsApp</td>
+        <td class="px-4 py-2">Atendimento automático</td>
+        <td class="px-4 py-2">Zap, Grow</td>
+      </tr>
+      <tr class="border-b border-slate-100">
+        <td class="px-4 py-2 font-medium">Google Agenda</td>
+        <td class="px-4 py-2">Sincronização de calendário</td>
+        <td class="px-4 py-2">Grow</td>
+      </tr>
+      <tr>
+        <td class="px-4 py-2 font-medium">Stripe Connect</td>
+        <td class="px-4 py-2">Recebimento de pagamentos</td>
+        <td class="px-4 py-2">Zap, Grow</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+## Status das integrações
+
+<div class="not-prose my-4 overflow-x-auto">
+  <table class="w-full text-sm border border-slate-200 rounded-lg">
+    <thead class="bg-slate-50">
+      <tr>
+        <th class="text-left px-4 py-2 font-medium text-slate-900 border-b border-slate-200">Status</th>
+        <th class="text-left px-4 py-2 font-medium text-slate-900 border-b border-slate-200">Significado</th>
+      </tr>
+    </thead>
+    <tbody class="text-slate-600">
+      <tr class="border-b border-slate-100">
+        <td class="px-4 py-2 font-medium">Conectado</td>
+        <td class="px-4 py-2">Funcionando normalmente</td>
+      </tr>
+      <tr class="border-b border-slate-100">
+        <td class="px-4 py-2 font-medium">Desconectado</td>
+        <td class="px-4 py-2">Não conectado</td>
+      </tr>
+      <tr class="border-b border-slate-100">
+        <td class="px-4 py-2 font-medium">Pendente</td>
+        <td class="px-4 py-2">Precisa de ação sua</td>
+      </tr>
+      <tr>
+        <td class="px-4 py-2 font-medium">Erro</td>
+        <td class="px-4 py-2">Problema na conexão</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+## Conectando uma integração
+
+1. Toque no card da integração
+2. Toque em **Conectar**
+3. Siga o processo específico de cada uma
+
+## Desconectando uma integração
+
+1. Toque no card da integração
+2. Toque em **Desconectar**
+3. Confirme
+
+## Problemas comuns
+
+### Integração desconectou sozinha
+
+**WhatsApp:**
+- O celular pode ter ficado offline
+- A sessão expirou
+- Solução: Reconecte escaneando o QR code
+
+**Google Agenda:**
+- A autorização expirou
+- Você mudou a senha do Google
+- Solução: Reconecte autorizando novamente
+
+**Stripe:**
+- Problema na verificação
+- Informações pendentes
+- Solução: Acesse o Stripe e complete o cadastro
+
+### Não consigo conectar
+
+1. Verifique sua conexão com a internet
+2. Verifique se seu plano inclui a integração
+3. Tente fechar e abrir o app
+4. Se persistir, contate suporte
+
+### Integração mostra "Erro"
+
+1. Toque no card para ver detalhes do erro
+2. Tente desconectar e reconectar
+3. Se for WhatsApp, verifique se o celular está online
+4. Se persistir, contate suporte
+
+## Guias detalhados
+
+Para instruções completas sobre cada integração:
+
+- [Conectando o WhatsApp →](/support/integracoes/whatsapp)
+- [Conectando o Google Agenda →](/support/integracoes/google-agenda)
+- [Conectando o Stripe →](/support/integracoes/stripe)
+
+## Próxima etapa
+
+<div class="not-prose mt-6">
+  <a href="/support/problemas" class="inline-flex items-center gap-2 text-emerald-600 font-medium hover:text-emerald-700">
+    Continuar para: Solução de Problemas
+    <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+    </svg>
+  </a>
+</div>

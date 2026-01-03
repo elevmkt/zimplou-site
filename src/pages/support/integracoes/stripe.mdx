@@ -1,0 +1,175 @@
+---
+layout: ../../../layouts/DocsLayout.astro
+title: Stripe Connect
+description: Configure o Stripe para receber pagamentos online dos seus clientes.
+---
+import Callout from '../../../components/docs/Callout.astro';
+import Steps from '../../../components/docs/Steps.astro';
+import Step from '../../../components/docs/Step.astro';
+import CardGrid from '../../../components/docs/CardGrid.astro';
+import LinkCard from '../../../components/docs/LinkCard.astro';
+import FeatureBadge from '../../../components/docs/FeatureBadge.astro';
+
+O Stripe Connect permite que você receba pagamentos diretamente na sua conta bancária quando clientes pagam online. <FeatureBadge plan="zap" />
+
+---
+
+## O que é o Stripe?
+
+O Stripe é uma plataforma de pagamentos usada por milhões de empresas no mundo. Com o Stripe Connect, você:
+
+- Recebe pagamentos por **cartão de crédito/débito**
+- Os valores são **transferidos automaticamente** para sua conta
+- Tem acesso a **relatórios** de todas as transações
+
+---
+
+## Antes de começar
+
+Você vai precisar de:
+
+- Documento de identidade (RG ou CNH)
+- CPF ou CNPJ
+- Conta bancária em seu nome (ou da empresa)
+
+---
+
+## Como conectar
+
+<Steps>
+  <Step title="Acesse as configurações">
+    Vá em **Conta → Integrações** e toque em **Conectar** no card do Stripe Connect. Você será redirecionado para o site do Stripe.
+  </Step>
+
+  <Step title="Preencha suas informações">
+    O Stripe vai pedir seus dados pessoais, informações do negócio e conta bancária. Veja a tabela abaixo para mais detalhes.
+  </Step>
+
+  <Step title="Aguarde a verificação">
+    Após completar o cadastro, a verificação pode levar de alguns minutos até 48 horas. Você recebe um email quando for aprovado.
+  </Step>
+
+  <Step title="Pronto!">
+    O status muda para **Conectado** e você pode começar a receber pagamentos.
+  </Step>
+</Steps>
+
+<Callout type="info" title="Sobre o onboarding">
+  Com contas Express conectadas, **o Stripe cuida de todo o processo de onboarding e verificação de identidade**. Você completa o cadastro diretamente no site do Stripe, de forma segura.
+</Callout>
+
+### O que o Stripe vai pedir
+
+| Informação | Descrição |
+|------------|-----------|
+| Email | Para criar/acessar sua conta Stripe |
+| Tipo de negócio | Pessoa física (CPF), MEI ou Empresa (CNPJ) |
+| Dados pessoais | Nome completo, CPF, data de nascimento |
+| Endereço | Residencial e/ou comercial |
+| Informações do negócio | Nome, categoria, descrição dos serviços |
+| Conta bancária | Banco, agência, conta para receber pagamentos |
+| Documento | Foto do RG ou CNH para verificação |
+
+---
+
+## Requisitos para o Brasil
+
+<Callout type="warning" title="CPF/CNPJ não pode ser alterado">
+  O CPF ou CNPJ associado à conta Stripe **não pode ser alterado** após a verificação. Escolha com cuidado.
+</Callout>
+
+**Sobre a conta bancária:**
+- Use uma **conta corrente** (não poupança)
+- A conta deve estar no mesmo CPF ou CNPJ da conta Stripe
+- Contas digitais (Nubank, Inter, etc.) funcionam
+
+**Documentos aceitos:**
+- RG (Registro Geral)
+- CNH (Carteira Nacional de Habilitação)
+- Passaporte
+
+<Callout type="tip" title="Dicas para a foto do documento">
+  Use boa iluminação (luz natural é melhor), evite reflexos e sombras, e certifique-se que o documento está completamente visível e legível.
+</Callout>
+
+---
+
+## Taxas e prazos
+
+| Tipo | Taxa |
+|------|------|
+| Cartão de crédito | 3,99% + R$ 0,39 |
+| Cartão de débito | 2,99% + R$ 0,39 |
+
+> **Exemplo:** Cliente paga R$ 100,00 → Taxa: R$ 4,38 → Você recebe: R$ 95,62
+
+**Prazo de transferência:** O Stripe transfere para sua conta bancária em **D+2 (dois dias úteis)**:
+- Pagamento segunda → Recebe quarta
+- Pagamento sexta → Recebe terça
+- Feriados bancários podem atrasar
+
+---
+
+## Gerenciar sua conta Stripe
+
+Após conectar, você pode acessar seu painel do Stripe em [dashboard.stripe.com](https://dashboard.stripe.com) para:
+
+- Ver todos os pagamentos recebidos
+- Alterar dados bancários
+- Baixar relatórios e recibos
+- Fazer reembolsos
+- Responder a disputas (chargebacks)
+
+---
+
+## Desconectar
+
+Vá em **Conta → Integrações** e toque em **Desconectar**.
+
+<Callout type="danger" title="Após desconectar">
+  Você não poderá mais receber pagamentos online. Valores pendentes ainda serão transferidos e sua conta Stripe continua existindo.
+</Callout>
+
+---
+
+## Solução de problemas
+
+| Problema | O que fazer |
+|----------|-------------|
+| "Ação necessária" | Acesse dashboard.stripe.com e complete o que falta |
+| Pagamento não aparece | Aguarde alguns minutos ou verifique no dashboard do Stripe |
+| Transferência não chegou | Lembre-se do prazo D+2 e verifique os dados bancários |
+| Documento rejeitado | Tire uma foto nova com melhor iluminação |
+| Conta bancária rejeitada | Verifique se digitou corretamente agência e conta |
+
+---
+
+## Links úteis
+
+<CardGrid>
+  <LinkCard
+    href="https://dashboard.stripe.com"
+    title="Dashboard do Stripe"
+    description="Gerencie pagamentos e configurações"
+    icon="card"
+  />
+  <LinkCard
+    href="https://support.stripe.com/"
+    title="Suporte do Stripe"
+    description="Ajuda oficial do Stripe"
+    icon="help"
+  />
+</CardGrid>
+
+---
+
+## Próximo passo
+
+<CardGrid cols={1}>
+  <LinkCard
+    href="/support/integracoes/google-agenda"
+    title="Conectar Google Agenda"
+    description="Sincronize seus compromissos automaticamente"
+    icon="calendar"
+  />
+</CardGrid>

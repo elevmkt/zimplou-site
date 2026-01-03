@@ -1,0 +1,237 @@
+---
+layout: ../../../layouts/DocsLayout.astro
+title: Problemas com WhatsApp
+description: Soluções para problemas de conexão e atendimento via WhatsApp.
+---
+
+Este guia ajuda a resolver problemas relacionados à integração com WhatsApp e ao atendimento automático da IA.
+
+## A IA não está respondendo
+
+### Verifique a conexão
+
+1. Vá em **Conta → Integrações**
+2. O status do WhatsApp deve ser "Conectado"
+
+**Se estiver "Desconectado":**
+- Toque em **Reconectar**
+- Escaneie o QR code com o WhatsApp do celular
+- Aguarde a conexão ser estabelecida
+
+### Verifique o celular
+
+O celular com WhatsApp precisa estar:
+- ✓ Ligado
+- ✓ Conectado à internet (Wi-Fi ou dados)
+- ✓ Com WhatsApp aberto ou em segundo plano
+- ✓ Com bateria suficiente
+
+**Teste:**
+1. Mande uma mensagem para alguém pelo celular
+2. Se funcionar, o problema é na conexão com Zimplou
+
+### Verifique o limite de mensagens
+
+1. Vá em **Conta → Assinatura**
+2. Veja o uso de mensagens
+
+Se atingiu o limite:
+- Aguarde o próximo mês (renova automaticamente)
+- Ou faça upgrade para plano com mais mensagens
+
+### Verifique a assinatura
+
+1. Vá em **Conta → Assinatura**
+2. O status deve ser "Ativo" ou "Período de teste"
+
+Se estiver:
+- **Pagamento pendente:** Atualize forma de pagamento
+- **Cancelado:** Reative a assinatura
+
+## Conexão cai frequentemente
+
+### Celular entrando em modo economia
+
+Alguns celulares desligam apps em segundo plano:
+
+**Android:**
+1. Configurações → Apps → WhatsApp
+2. Bateria → Sem restrição
+3. Desative "Otimização de bateria" para WhatsApp
+
+**iPhone:**
+1. Configurações → WhatsApp
+2. Atualização em segundo plano → Ativado
+
+### Conexão de internet instável
+
+Se sua internet é instável:
+- Prefira Wi-Fi estável ao invés de dados móveis
+- Verifique se não está alternando entre redes
+- Considere deixar em Wi-Fi fixo
+
+### Conflito com WhatsApp Web
+
+O WhatsApp permite poucos dispositivos conectados:
+1. No celular, vá em WhatsApp → Dispositivos conectados
+2. Veja quantos dispositivos estão conectados
+3. Remova dispositivos que não usa
+4. Mantenha o Zimplou como prioritário
+
+### Atualização do WhatsApp
+
+Atualizações do WhatsApp podem afetar a conexão:
+1. Verifique se há atualizações pendentes
+2. Atualize o WhatsApp
+3. Reconecte no Zimplou após atualizar
+
+## QR code não funciona
+
+### QR code não aparece
+
+1. Verifique sua conexão com a internet
+2. Aguarde alguns segundos
+3. Puxe a tela para baixo para atualizar
+4. Feche e abra a seção de integrações
+
+### QR code expira antes de escanear
+
+O QR code é válido por tempo limitado:
+1. Tenha o celular em mãos antes de gerar
+2. Toque em **Gerar novo QR code**
+3. Escaneie imediatamente
+
+### Escaneio mas não conecta
+
+1. Verifique se está usando a câmera certa (WhatsApp, não a do celular)
+2. No WhatsApp: Menu → Dispositivos conectados → Conectar dispositivo
+3. Certifique-se que o QR está nítido e completo na tela
+4. Tente aproximar ou afastar o celular
+
+### "Não foi possível conectar"
+
+Se aparecer erro após escanear:
+1. Verifique a internet do celular
+2. Verifique a internet do dispositivo com Zimplou
+3. Aguarde 1 minuto e tente novamente
+4. Se persistir, reinicie o WhatsApp no celular
+
+## IA responde errado
+
+### Informação incorreta
+
+Se a IA dá informação errada, a fonte pode ser:
+
+| Informação | Onde corrigir |
+|------------|---------------|
+| Preço | Negócio → Ofertas |
+| Horário | Negócio → Horários |
+| Endereço | Negócio → Informações |
+| Serviços | Negócio → Ofertas |
+
+Corrija a fonte, salve e teste no preview.
+
+### Tom inadequado
+
+Se o tom está errado (muito formal, muito casual):
+1. Vá em **IA → Personalidade**
+2. Ajuste o controle de Formalidade
+3. Salve e teste no preview
+
+### IA não sabe algo que deveria
+
+Adicione nas instruções:
+1. Vá em **IA → Comportamento**
+2. Adicione a informação que falta
+3. Salve e teste no preview
+
+## Cliente não recebe resposta
+
+### Demora na resposta
+
+A IA geralmente responde em segundos. Se está demorando:
+1. Verifique se a conexão está ativa
+2. Pode haver delay intencional (para parecer mais humano)
+3. Em horários de pico, pode ter pequeno atraso
+
+### Mensagem não foi recebida
+
+Possíveis causas:
+- O número do cliente está errado
+- O WhatsApp do cliente está offline
+- Mensagem foi bloqueada pelo WhatsApp
+
+### Cliente está bloqueado
+
+Se você bloqueou o cliente no WhatsApp:
+- A IA não consegue responder
+- Desbloqueie pelo WhatsApp do celular
+
+## Mensagens não contam no limite
+
+Cada mensagem processada pela IA conta no limite. **Não contam:**
+- Mensagens que você envia manualmente
+- Mensagens quando a IA está desconectada
+- Mensagens de mídia (fotos, áudios) que a IA não processa
+
+## Quero responder manualmente
+
+Você pode responder diretamente pelo WhatsApp:
+1. Responda normalmente pelo celular
+2. A IA "entende" que você assumiu a conversa
+3. A IA não vai interferir enquanto você conversa
+4. Após um tempo sem você responder, a IA pode voltar
+
+## Mudando de número
+
+Para usar outro número de WhatsApp:
+1. Vá em **Conta → Integrações**
+2. Desconecte o WhatsApp atual
+3. Conecte novamente
+4. Escaneie o QR code com o novo número
+
+## WhatsApp Business vs. Normal
+
+O Zimplou funciona com ambos:
+- **WhatsApp normal:** Funciona
+- **WhatsApp Business:** Funciona (recomendado)
+
+Vantagens do Business:
+- Perfil comercial
+- Catálogo de produtos
+- Mensagens de ausência como backup
+
+## A conexão não restabelece automaticamente
+
+Às vezes a conexão cai e não volta:
+1. Verifique se o celular está online
+2. Abra o WhatsApp no celular (pode acordar a conexão)
+3. Se não resolver, reconecte manualmente no Zimplou
+
+## Dois negócios, dois WhatsApps
+
+Se você tem dois negócios:
+- Cada negócio precisa de conta Zimplou separada
+- Cada conta conecta a um número WhatsApp
+- Você pode ter múltiplas contas com emails diferentes
+
+## Segurança
+
+### A conexão é segura?
+
+Sim. O Zimplou usa protocolos seguros:
+- Conexão criptografada
+- Não armazena suas mensagens antigas
+- Só processa mensagens novas
+
+### Alguém pode acessar meu WhatsApp?
+
+Não. O Zimplou só consegue:
+- Receber mensagens
+- Enviar respostas
+- Ver status de entrega
+
+Não consegue:
+- Ver mensagens antigas
+- Acessar seus contatos
+- Ver suas fotos ou status

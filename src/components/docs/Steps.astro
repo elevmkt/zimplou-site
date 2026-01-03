@@ -1,0 +1,65 @@
+---
+/**
+ * Steps Component
+ *
+ * A numbered step list for procedures and tutorials.
+ * Uses the emerald/teal accent from Zimplou's design system.
+ *
+ * Usage in MDX:
+ * <Steps>
+ *   <Step title="First Step">Content for step 1</Step>
+ *   <Step title="Second Step">Content for step 2</Step>
+ * </Steps>
+ */
+---
+
+<div class="steps not-prose my-6">
+  <slot />
+</div>
+
+<style>
+  .steps {
+    counter-reset: step-counter;
+  }
+
+  .steps :global(.step) {
+    counter-increment: step-counter;
+    position: relative;
+    padding-left: 3rem;
+    padding-bottom: 1.5rem;
+  }
+
+  .steps :global(.step:last-child) {
+    padding-bottom: 0;
+  }
+
+  /* Connector line */
+  .steps :global(.step:not(:last-child)::before) {
+    content: '';
+    position: absolute;
+    left: 0.9375rem;
+    top: 2rem;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(to bottom, #d1fae5, #e2e8f0);
+  }
+
+  /* Step number */
+  .steps :global(.step::after) {
+    content: counter(step-counter);
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #10b981, #14b8a6);
+    color: white;
+    font-size: 0.875rem;
+    font-weight: 600;
+    border-radius: 9999px;
+    box-shadow: 0 2px 8px rgba(16, 185, 129, 0.3);
+  }
+</style>

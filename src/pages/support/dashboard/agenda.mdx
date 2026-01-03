@@ -1,0 +1,265 @@
+---
+layout: ../../../layouts/DocsLayout.astro
+title: Agenda
+description: Visualize e gerencie seus agendamentos no calendário do Zimplou.
+---
+
+A Agenda é a tela principal do dashboard. Aqui você vê todos os agendamentos, gerencia horários e acompanha o dia a dia do seu negócio.
+
+## Visões do calendário
+
+Você pode visualizar a agenda de três formas:
+
+### Visão diária
+
+Mostra as horas do dia atual com os agendamentos:
+
+```
+08:00
+09:00  ████ Corte - João Silva
+10:00
+11:00  ████ Escova - Maria Santos
+12:00  --- ALMOÇO ---
+13:00
+14:00  ████ Coloração - Ana Paula
+15:00  ████ (continuação)
+16:00
+```
+
+**Quando usar:** Para ver detalhes do dia e gerenciar hora a hora.
+
+### Visão semanal
+
+Mostra os 7 dias da semana em colunas:
+
+```
+Seg   Ter   Qua   Qui   Sex   Sáb   Dom
+ 2     3     4     5     6     7     8
+ █     ██    █     ███   ██    █     -
+```
+
+**Quando usar:** Para ter noção de como está a semana e identificar dias mais cheios ou vazios.
+
+### Visão mensal
+
+Calendário tradicional do mês com indicadores de agendamentos:
+
+```
+        Janeiro 2024
+Dom Seg Ter Qua Qui Sex Sáb
+     1   2   3   4   5   6
+ 7   8   9  10  11  12  13
+14  15  16  17  18  19  20
+...
+```
+
+Dias com agendamentos têm um ponto ou destaque visual.
+
+**Quando usar:** Para visão geral do mês e planejamento.
+
+## Alternando entre visões
+
+Para mudar a visão:
+1. No topo da agenda, toque no seletor de visão
+2. Escolha **Dia**, **Semana** ou **Mês**
+
+Ou use gestos:
+- **Deslize para os lados** — Navega entre dias/semanas/meses
+- **Toque duplo** — Alterna entre visões
+
+## Informações do agendamento
+
+Cada agendamento mostra:
+
+| Informação | Exemplo |
+|------------|---------|
+| **Horário** | 14:00 - 15:00 |
+| **Serviço** | Corte masculino |
+| **Cliente** | João Silva |
+| **Status** | Confirmado / Pendente / Cancelado |
+
+## Status dos agendamentos
+
+Os agendamentos podem ter diferentes status:
+
+| Status | Cor | Significado |
+|--------|-----|-------------|
+| **Confirmado** | Verde | Cliente confirmou presença |
+| **Pendente** | Amarelo | Aguardando confirmação |
+| **Cancelado** | Vermelho | Cliente cancelou |
+| **Concluído** | Cinza | Atendimento realizado |
+| **No-show** | Vermelho escuro | Cliente não compareceu |
+
+## Ações com agendamentos
+
+### Ver detalhes
+
+Toque em um agendamento para ver:
+- Informações completas do cliente
+- Serviço e preço
+- Observações
+- Histórico de comunicação
+
+### Confirmar agendamento
+
+Se o status está "Pendente":
+1. Toque no agendamento
+2. Toque em **Confirmar**
+3. O cliente recebe notificação (se configurado)
+
+### Remarcar
+
+Para mudar data/hora:
+1. Toque no agendamento
+2. Toque em **Remarcar**
+3. Escolha nova data e horário
+4. Confirme a alteração
+
+O cliente é notificado automaticamente.
+
+### Cancelar
+
+Para cancelar um agendamento:
+1. Toque no agendamento
+2. Toque em **Cancelar**
+3. Opcionalmente, informe o motivo
+4. Confirme o cancelamento
+
+O cliente é notificado automaticamente.
+
+### Marcar como concluído
+
+Após o atendimento:
+1. Toque no agendamento
+2. Toque em **Concluir** ou **Marcar como feito**
+3. O agendamento vai para o histórico
+
+### Marcar como no-show
+
+Se o cliente não apareceu:
+1. Toque no agendamento
+2. Toque em **No-show** ou **Não compareceu**
+3. Isso ajuda a identificar clientes problemáticos
+
+## Bloqueando horários
+
+Para impedir agendamentos em determinado horário:
+
+### Bloquear horário único
+
+1. Na visão diária, toque e segure no horário desejado
+2. Selecione **Bloquear horário**
+3. Opcionalmente, adicione uma descrição (ex: "Compromisso pessoal")
+4. Confirme
+
+### Bloquear período
+
+1. Toque em **+** ou no menu de opções
+2. Selecione **Bloquear período**
+3. Defina data/hora de início e fim
+4. Confirme
+
+### Bloquear dia inteiro
+
+1. Na visão mensal, toque e segure no dia
+2. Selecione **Bloquear dia**
+3. Opcionalmente, escolha se é feriado ou folga
+4. Confirme
+
+### Remover bloqueio
+
+1. Toque no bloqueio
+2. Toque em **Remover bloqueio**
+3. Confirme
+
+## Agendamento manual
+
+Para adicionar um agendamento manualmente (ex: cliente ligou):
+
+1. Toque em **+** no canto superior
+2. Selecione **Novo agendamento**
+3. Preencha:
+   - Nome do cliente
+   - Telefone (opcional)
+   - Serviço
+   - Data e hora
+4. Toque em **Salvar**
+
+## Filtros
+
+Para encontrar agendamentos específicos:
+
+1. Toque no ícone de filtro (funil)
+2. Filtre por:
+   - **Status** — Confirmado, Pendente, etc.
+   - **Serviço** — Tipo de atendimento
+   - **Profissional** — Se você tem equipe
+   - **Período** — Data específica
+
+## Sincronização com Google Agenda
+
+Se você conectou o Google Agenda:
+- Agendamentos do Zimplou aparecem no Google
+- Eventos do Google bloqueiam horários no Zimplou
+- A sincronização é automática
+
+[Saiba mais sobre Google Agenda →](/support/integracoes/google-agenda)
+
+## Problemas comuns
+
+### Agendamento não aparece
+
+1. Verifique a data — Pode estar em outro dia
+2. Verifique os filtros — Pode estar filtrado
+3. Puxe para baixo para atualizar
+4. Se veio do WhatsApp, aguarde alguns segundos
+
+### Cliente agendou horário que deveria estar bloqueado
+
+Isso pode acontecer se:
+- O bloqueio foi feito depois do agendamento
+- Há um delay na sincronização com Google Agenda
+- O horário não estava completamente bloqueado
+
+**Solução:** Entre em contato com o cliente para remarcar.
+
+### O calendário está mostrando horário errado
+
+Verifique o fuso horário em **Conta → Configurações**. Ele deve corresponder à sua localização.
+
+### Não consigo editar um agendamento passado
+
+Agendamentos de datas passadas ficam bloqueados para edição. Você pode apenas marcar como concluído ou no-show.
+
+### Quero ver agendamentos antigos
+
+1. Use a visão mensal
+2. Navegue para o mês desejado
+3. Toque no dia para ver os agendamentos
+
+Ou use a busca para encontrar por nome do cliente.
+
+## Dicas de produtividade
+
+### Cores para organização
+
+Se você tem diferentes tipos de serviço, eles podem ter cores diferentes no calendário para identificação rápida.
+
+### Intervalo entre agendamentos
+
+Configure um tempo de preparo entre atendimentos em **Negócio → Horários** para evitar encaixes apertados.
+
+### Notificações
+
+Configure lembretes em **Conta → Notificações** para receber alertas de próximos agendamentos.
+
+## Próxima etapa
+
+<div class="not-prose mt-6">
+  <a href="/support/dashboard/financas" class="inline-flex items-center gap-2 text-emerald-600 font-medium hover:text-emerald-700">
+    Continuar para: Finanças
+    <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+    </svg>
+  </a>
+</div>
