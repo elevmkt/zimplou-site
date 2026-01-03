@@ -1,0 +1,336 @@
+---
+/**
+ * DocsSearch Component
+ *
+ * A search modal for documentation with fuzzy matching.
+ * Opens with ⌘K / Ctrl+K or by clicking the search bar.
+ */
+import { docsNav } from '../config/docs-nav';
+
+// Build search index from navigation
+const searchIndex = docsNav.flatMap(section =>
+  section.items.map(item => ({
+    title: item.title,
+    section: section.title,
+    href: item.href,
+    // Keywords for better matching
+    keywords: `${section.title} ${item.title}`.toLowerCase(),
+  }))
+);
+
+// Section icons for results
+const sectionIcons: Record<string, string> = {
+  'Começando': 'rocket',
+  'Configuração Inicial': 'settings',
+  'Conectando Integrações': 'link',
+  'Usando o Dashboard': 'layout',
+  'Gerenciando seu Negócio': 'briefcase',
+  'Configurando a IA': 'sparkles',
+  'Conta e Configurações': 'user',
+  'Solução de Problemas': 'help',
+};
+---
+
+<!-- Search Trigger (replaces the fake search bar) -->
+<button
+  type="button"
+  id="search-trigger"
+  class="flex w-full items-center gap-2 rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm text-slate-500 transition-all hover:border-slate-300 hover:bg-slate-50 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2"
+>
+  <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+    <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+  </svg>
+  <span class="flex-1 text-left">Buscar...</span>
+  <kbd class="hidden sm:inline-flex rounded bg-slate-100 px-1.5 py-0.5 text-xs font-medium text-slate-400 border border-slate-200">⌘K</kbd>
+</button>
+
+<!-- Search Modal -->
+<div
+  id="search-modal"
+  class="fixed inset-0 z-50 hidden"
+  role="dialog"
+  aria-modal="true"
+  aria-labelledby="search-title"
+>
+  <!-- Backdrop -->
+  <div id="search-backdrop" class="absolute inset-0 bg-slate-900/50 backdrop-blur-sm"></div>
+
+  <!-- Modal -->
+  <div class="relative flex min-h-full items-start justify-center p-4 pt-[15vh]">
+    <div
+      id="search-panel"
+      class="w-full max-w-lg transform overflow-hidden rounded-2xl bg-white shadow-2xl ring-1 ring-slate-200 transition-all"
+    >
+      <!-- Search Input -->
+      <div class="relative border-b border-slate-200">
+        <svg class="absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+        </svg>
+        <input
+          type="text"
+          id="search-input"
+          class="w-full border-0 bg-transparent py-4 pl-12 pr-4 text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-0"
+          placeholder="Buscar na documentação..."
+          autocomplete="off"
+          spellcheck="false"
+        />
+        <button
+          type="button"
+          id="search-close"
+          class="absolute right-3 top-1/2 -translate-y-1/2 rounded-md bg-slate-100 px-2 py-1 text-xs font-medium text-slate-500 hover:bg-slate-200 transition-colors"
+        >
+          ESC
+        </button>
+      </div>
+
+      <!-- Results -->
+      <div id="search-results" class="max-h-[60vh] overflow-y-auto p-2">
+        <!-- Empty state -->
+        <div id="search-empty" class="px-4 py-8 text-center text-sm text-slate-500">
+          Digite para buscar na documentação
+        </div>
+
+        <!-- No results -->
+        <div id="search-no-results" class="hidden px-4 py-8 text-center text-sm text-slate-500">
+          Nenhum resultado encontrado
+        </div>
+
+        <!-- Results list (populated by JS) -->
+        <ul id="search-results-list" class="hidden space-y-1"></ul>
+      </div>
+
+      <!-- Footer -->
+      <div class="flex items-center justify-between border-t border-slate-200 bg-slate-50 px-4 py-3 text-xs text-slate-500">
+        <div class="flex items-center gap-3">
+          <span class="flex items-center gap-1">
+            <kbd class="rounded bg-white px-1.5 py-0.5 font-medium shadow-sm border border-slate-200">↑</kbd>
+            <kbd class="rounded bg-white px-1.5 py-0.5 font-medium shadow-sm border border-slate-200">↓</kbd>
+            navegar
+          </span>
+          <span class="flex items-center gap-1">
+            <kbd class="rounded bg-white px-1.5 py-0.5 font-medium shadow-sm border border-slate-200">↵</kbd>
+            abrir
+          </span>
+        </div>
+        <span class="flex items-center gap-1">
+          <kbd class="rounded bg-white px-1.5 py-0.5 font-medium shadow-sm border border-slate-200">esc</kbd>
+          fechar
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Pass data to client-side script -->
+<script id="search-data" type="application/json" set:html={JSON.stringify(searchIndex)}></script>
+<script id="section-icons" type="application/json" set:html={JSON.stringify(sectionIcons)}></script>
+
+<script>
+  import Fuse from 'fuse.js';
+
+  // Get search data
+  const searchData = JSON.parse(document.getElementById('search-data')?.textContent || '[]');
+  const sectionIcons = JSON.parse(document.getElementById('section-icons')?.textContent || '{}');
+
+  // Initialize Fuse.js
+  const fuse = new Fuse(searchData, {
+    keys: ['title', 'section', 'keywords'],
+    threshold: 0.4,
+    includeScore: true,
+  });
+
+  // DOM elements
+  const trigger = document.getElementById('search-trigger');
+  const modal = document.getElementById('search-modal');
+  const backdrop = document.getElementById('search-backdrop');
+  const input = document.getElementById('search-input') as HTMLInputElement;
+  const closeBtn = document.getElementById('search-close');
+  const resultsContainer = document.getElementById('search-results-list');
+  const emptyState = document.getElementById('search-empty');
+  const noResults = document.getElementById('search-no-results');
+
+  let selectedIndex = 0;
+  let currentResults: typeof searchData = [];
+
+  // Icon SVGs
+  const iconSvgs: Record<string, string> = {
+    rocket: '<path stroke-linecap="round" stroke-linejoin="round" d="M15.59 14.37a6 6 0 01-5.84 7.38v-4.8m5.84-2.58a14.98 14.98 0 006.16-12.12A14.98 14.98 0 009.631 8.41m5.96 5.96a14.926 14.926 0 01-5.841 2.58m-.119-8.54a6 6 0 00-7.381 5.84h4.8m2.581-5.84a14.927 14.927 0 00-2.58 5.84m2.699 2.7c-.103.021-.207.041-.311.06a15.09 15.09 0 01-2.448-2.448 14.9 14.9 0 01.06-.312m-2.24 2.39a4.493 4.493 0 00-1.757 4.306 4.493 4.493 0 004.306-1.758M16.5 9a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z" />',
+    settings: '<path stroke-linecap="round" stroke-linejoin="round" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" /><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />',
+    link: '<path stroke-linecap="round" stroke-linejoin="round" d="M13.19 8.688a4.5 4.5 0 011.242 7.244l-4.5 4.5a4.5 4.5 0 01-6.364-6.364l1.757-1.757m13.35-.622l1.757-1.757a4.5 4.5 0 00-6.364-6.364l-4.5 4.5a4.5 4.5 0 001.242 7.244" />',
+    layout: '<path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6A2.25 2.25 0 016 3.75h2.25A2.25 2.25 0 0110.5 6v2.25a2.25 2.25 0 01-2.25 2.25H6a2.25 2.25 0 01-2.25-2.25V6zM3.75 15.75A2.25 2.25 0 016 13.5h2.25a2.25 2.25 0 012.25 2.25V18a2.25 2.25 0 01-2.25 2.25H6A2.25 2.25 0 013.75 18v-2.25zM13.5 6a2.25 2.25 0 012.25-2.25H18A2.25 2.25 0 0120.25 6v2.25A2.25 2.25 0 0118 10.5h-2.25a2.25 2.25 0 01-2.25-2.25V6zM13.5 15.75a2.25 2.25 0 012.25-2.25H18a2.25 2.25 0 012.25 2.25V18A2.25 2.25 0 0118 20.25h-2.25A2.25 2.25 0 0113.5 18v-2.25z" />',
+    briefcase: '<path stroke-linecap="round" stroke-linejoin="round" d="M20.25 14.15v4.25c0 1.094-.787 2.036-1.872 2.18-2.087.277-4.216.42-6.378.42s-4.291-.143-6.378-.42c-1.085-.144-1.872-1.086-1.872-2.18v-4.25m16.5 0a2.18 2.18 0 00.75-1.661V8.706c0-1.081-.768-2.015-1.837-2.175a48.114 48.114 0 00-3.413-.387m4.5 8.006c-.194.165-.42.295-.673.38A23.978 23.978 0 0112 15.75c-2.648 0-5.195-.429-7.577-1.22a2.016 2.016 0 01-.673-.38m0 0A2.18 2.18 0 013 12.489V8.706c0-1.081.768-2.015 1.837-2.175a48.111 48.111 0 013.413-.387m7.5 0V5.25A2.25 2.25 0 0013.5 3h-3a2.25 2.25 0 00-2.25 2.25v.894m7.5 0a48.667 48.667 0 00-7.5 0M12 12.75h.008v.008H12v-.008z" />',
+    sparkles: '<path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 00-2.456 2.456zM16.894 20.567L16.5 21.75l-.394-1.183a2.25 2.25 0 00-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 001.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 001.423 1.423l1.183.394-1.183.394a2.25 2.25 0 00-1.423 1.423z" />',
+    user: '<path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />',
+    help: '<path stroke-linecap="round" stroke-linejoin="round" d="M9.879 7.519c1.171-1.025 3.071-1.025 4.242 0 1.172 1.025 1.172 2.687 0 3.712-.203.179-.43.326-.67.442-.745.361-1.45.999-1.45 1.827v.75M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9 5.25h.008v.008H12v-.008z" />',
+  };
+
+  function openModal() {
+    modal?.classList.remove('hidden');
+    document.body.style.overflow = 'hidden';
+    input?.focus();
+  }
+
+  function closeModal() {
+    modal?.classList.add('hidden');
+    document.body.style.overflow = '';
+    if (input) input.value = '';
+    resetResults();
+  }
+
+  function resetResults() {
+    selectedIndex = 0;
+    currentResults = [];
+    if (resultsContainer) resultsContainer.innerHTML = '';
+    resultsContainer?.classList.add('hidden');
+    emptyState?.classList.remove('hidden');
+    noResults?.classList.add('hidden');
+  }
+
+  function renderResults(results: typeof searchData) {
+    if (!resultsContainer) return;
+
+    currentResults = results;
+    selectedIndex = 0;
+
+    if (results.length === 0) {
+      resultsContainer.classList.add('hidden');
+      emptyState?.classList.add('hidden');
+      noResults?.classList.remove('hidden');
+      return;
+    }
+
+    emptyState?.classList.add('hidden');
+    noResults?.classList.add('hidden');
+    resultsContainer.classList.remove('hidden');
+
+    resultsContainer.innerHTML = results.map((item, index) => {
+      const iconType = sectionIcons[item.section] || 'help';
+      const iconSvg = iconSvgs[iconType] || iconSvgs.help;
+
+      return `
+        <li>
+          <a
+            href="${item.href}"
+            class="search-result flex items-center gap-3 rounded-lg px-3 py-2.5 transition-colors ${index === 0 ? 'bg-emerald-50 text-emerald-900' : 'text-slate-700 hover:bg-slate-50'}"
+            data-index="${index}"
+          >
+            <span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg ${index === 0 ? 'bg-emerald-500 text-white' : 'bg-slate-100 text-slate-500'}">
+              <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                ${iconSvg}
+              </svg>
+            </span>
+            <div class="flex-1 min-w-0">
+              <p class="font-medium truncate">${item.title}</p>
+              <p class="text-xs ${index === 0 ? 'text-emerald-700' : 'text-slate-500'} truncate">${item.section}</p>
+            </div>
+            <svg class="h-4 w-4 shrink-0 ${index === 0 ? 'text-emerald-500' : 'text-slate-400'}" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+            </svg>
+          </a>
+        </li>
+      `;
+    }).join('');
+  }
+
+  function updateSelection(newIndex: number) {
+    if (currentResults.length === 0) return;
+
+    selectedIndex = Math.max(0, Math.min(newIndex, currentResults.length - 1));
+
+    const items = resultsContainer?.querySelectorAll('.search-result');
+    items?.forEach((item, index) => {
+      const link = item as HTMLAnchorElement;
+      const icon = link.querySelector('span:first-child');
+      const section = link.querySelector('p:last-child');
+      const arrow = link.querySelector('svg:last-child');
+
+      if (index === selectedIndex) {
+        link.classList.add('bg-emerald-50', 'text-emerald-900');
+        link.classList.remove('text-slate-700', 'hover:bg-slate-50');
+        icon?.classList.add('bg-emerald-500', 'text-white');
+        icon?.classList.remove('bg-slate-100', 'text-slate-500');
+        section?.classList.add('text-emerald-700');
+        section?.classList.remove('text-slate-500');
+        arrow?.classList.add('text-emerald-500');
+        arrow?.classList.remove('text-slate-400');
+        link.scrollIntoView({ block: 'nearest' });
+      } else {
+        link.classList.remove('bg-emerald-50', 'text-emerald-900');
+        link.classList.add('text-slate-700', 'hover:bg-slate-50');
+        icon?.classList.remove('bg-emerald-500', 'text-white');
+        icon?.classList.add('bg-slate-100', 'text-slate-500');
+        section?.classList.remove('text-emerald-700');
+        section?.classList.add('text-slate-500');
+        arrow?.classList.remove('text-emerald-500');
+        arrow?.classList.add('text-slate-400');
+      }
+    });
+  }
+
+  function navigateToSelected() {
+    if (currentResults.length > 0 && currentResults[selectedIndex]) {
+      window.location.href = currentResults[selectedIndex].href;
+    }
+  }
+
+  // Event listeners
+  trigger?.addEventListener('click', openModal);
+  backdrop?.addEventListener('click', closeModal);
+  closeBtn?.addEventListener('click', closeModal);
+
+  input?.addEventListener('input', (e) => {
+    const query = (e.target as HTMLInputElement).value.trim();
+
+    if (!query) {
+      resetResults();
+      return;
+    }
+
+    const results = fuse.search(query, { limit: 8 }).map(r => r.item);
+    renderResults(results);
+  });
+
+  // Keyboard navigation
+  document.addEventListener('keydown', (e) => {
+    // Open with Cmd/Ctrl + K
+    if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
+      e.preventDefault();
+      if (modal?.classList.contains('hidden')) {
+        openModal();
+      } else {
+        closeModal();
+      }
+      return;
+    }
+
+    // Only handle other keys if modal is open
+    if (modal?.classList.contains('hidden')) return;
+
+    switch (e.key) {
+      case 'Escape':
+        closeModal();
+        break;
+      case 'ArrowDown':
+        e.preventDefault();
+        updateSelection(selectedIndex + 1);
+        break;
+      case 'ArrowUp':
+        e.preventDefault();
+        updateSelection(selectedIndex - 1);
+        break;
+      case 'Enter':
+        e.preventDefault();
+        navigateToSelected();
+        break;
+    }
+  });
+
+  // Mouse hover on results
+  resultsContainer?.addEventListener('mouseover', (e) => {
+    const target = (e.target as HTMLElement).closest('.search-result');
+    if (target) {
+      const index = parseInt(target.getAttribute('data-index') || '0', 10);
+      updateSelection(index);
+    }
+  });
+</script>

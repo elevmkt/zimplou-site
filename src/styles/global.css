@@ -404,32 +404,17 @@ body {
 }
 
 .prose ol {
-  list-style: none;
-  counter-reset: item;
-  padding-left: 0;
+  list-style: decimal;
+  padding-left: 1.5rem;
 }
 
 .prose ol > li {
-  position: relative;
-  padding-left: 2rem;
-  counter-increment: item;
+  padding-left: 0.25rem;
 }
 
-.prose ol > li::before {
-  content: counter(item);
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 1.5rem;
-  height: 1.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: linear-gradient(135deg, #ecfdf5, #d1fae5);
-  color: #059669;
-  font-size: 0.75rem;
-  font-weight: 600;
-  border-radius: 50%;
+.prose ol > li::marker {
+  color: #64748b;
+  font-weight: 500;
 }
 
 /* Headings with subtle accent */
